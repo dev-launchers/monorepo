@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@DevLaunchers/UI": [
+        "packages/ui/src/index.ts"
+      ]
+    }
+  }
+}
