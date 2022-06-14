@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // reactStrictMode: true,
+  experimental: {
+    outputStandalone: true,
+  }
 }
 const withTM = require('next-transpile-modules')(['ideas']); // pass the modules you would like to see transpiled
 
