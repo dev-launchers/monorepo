@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "apps/ideas",
-    "apps/platform"
+    "apps/*",
+    "packages/*"
   ],
   "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev-platform": "yarn --cwd apps/platform dev",
-    "build-platform": "yarn --cwd apps/platform build",
-    "start-platform": "yarn --cwd apps/platform start"
-  }
+  "license": "MIT"
 }
