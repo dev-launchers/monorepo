@@ -55,22 +55,15 @@ function MyApp({ Component, pageProps }) {
               src="https://www.googletagmanager.com/gtag/js?id=AW-599284852"
             ></script>
           </Head>
-          <SheetsProvider>
-            <RepoProvider>
-              <LeaderboardProvider>
-                <UserDataProvider>
-                  <div className="App">
-                    <ToastContainer
-                      className="toast-container"
-                      toastClassName="toast"
-                      progressClassName="toast-progress"
-                    />
-                  </div>
-                  <Component {...pageProps} />
-                </UserDataProvider>
-              </LeaderboardProvider>
-            </RepoProvider>
-          </SheetsProvider>
+
+          <div className="App">
+            <ToastContainer
+              className="toast-container"
+              toastClassName="toast"
+              progressClassName="toast-progress"
+            />
+          </div>
+          <Component {...pageProps} />
         </div>
       </ThemeProvider>
     </>

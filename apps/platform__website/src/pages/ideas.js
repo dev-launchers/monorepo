@@ -1,1 +1,1 @@
-export { default } from "ideas/pages/index"
+export { default } from "@devlaunchers/ideas/pages/ideas";

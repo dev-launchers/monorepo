@@ -77,7 +77,7 @@ function HamburgerMenu() {
             </Link>
 
             <div>
-              {userData.id ? (
+              {userData?.id ? (
                 <>
                   <Link href={"/users/me"} passHref>
                     <a className="nav-link">

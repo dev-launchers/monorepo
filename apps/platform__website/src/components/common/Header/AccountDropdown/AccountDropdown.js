@@ -11,7 +11,7 @@ import {
 export default function AccountDropdown(props) {
   return (
     <div>
-      {props.userData.id && props.userData.username ? (
+      {props?.userData?.id && props?.userData?.username ? (
         <AccountMenuDropdownButton
           toggleBtnText="Menu"
           dropdownItems={
