@@ -1,10 +1,11 @@
 # Name of our action
 name: 'Chromatic'
 # The event that will trigger the action
-on: push
-      paths: 
-        - 'packages/UI/.storybook/**'
-        - 'packages/UI/src/**'
+on: 
+  push
+    paths: 
+      - 'packages/UI/.storybook/**'
+      - 'packages/UI/src/**'
 # What the action will do
 jobs:
   test:
