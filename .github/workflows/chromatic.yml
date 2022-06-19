@@ -2,7 +2,7 @@
 name: 'Chromatic'
 # The event that will trigger the action
 on: 
-  push
+  push:
     paths: 
       - 'packages/UI/.storybook/**'
       - 'packages/UI/src/**'
