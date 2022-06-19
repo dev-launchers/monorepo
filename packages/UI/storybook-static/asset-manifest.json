@@ -1,0 +1,35 @@
+{
+  "files": {
+    "0.90b1d5fe.iframe.bundle.js": "./0.90b1d5fe.iframe.bundle.js",
+    "0.90b1d5fe.iframe.bundle.js.map": "./0.90b1d5fe.iframe.bundle.js.map",
+    "1.ed749931.iframe.bundle.js": "./1.ed749931.iframe.bundle.js",
+    "1.ed749931.iframe.bundle.js.map": "./1.ed749931.iframe.bundle.js.map",
+    "2.46775a7a.iframe.bundle.js": "./2.46775a7a.iframe.bundle.js",
+    "3.48a8a903.iframe.bundle.js": "./3.48a8a903.iframe.bundle.js",
+    "main.css": "./static/css/main.29964548.chunk.css",
+    "main.js": "./main.f9bdb7b1.iframe.bundle.js",
+    "main.css.map": "./static/css/main.29964548.chunk.css.map",
+    "runtime~main.js": "./runtime~main.c3d84206.iframe.bundle.js",
+    "vendors~main.js": "./vendors~main.97974698.iframe.bundle.js",
+    "vendors~main.js.map": "./vendors~main.97974698.iframe.bundle.js.map",
+    "7.b2d63db0.iframe.bundle.js": "./7.b2d63db0.iframe.bundle.js",
+    "7.b2d63db0.iframe.bundle.js.map": "./7.b2d63db0.iframe.bundle.js.map",
+    "8.6f94f9ad.iframe.bundle.js": "./8.6f94f9ad.iframe.bundle.js",
+    "9.345c47d2.iframe.bundle.js": "./9.345c47d2.iframe.bundle.js",
+    "10.36151a95.iframe.bundle.js": "./10.36151a95.iframe.bundle.js",
+    "10.36151a95.iframe.bundle.js.map": "./10.36151a95.iframe.bundle.js.map",
+    "0.90b1d5fe.iframe.bundle.js.LICENSE.txt": "./0.90b1d5fe.iframe.bundle.js.LICENSE.txt",
+    "1.ed749931.iframe.bundle.js.LICENSE.txt": "./1.ed749931.iframe.bundle.js.LICENSE.txt",
+    "10.36151a95.iframe.bundle.js.LICENSE.txt": "./10.36151a95.iframe.bundle.js.LICENSE.txt",
+    "7.b2d63db0.iframe.bundle.js.LICENSE.txt": "./7.b2d63db0.iframe.bundle.js.LICENSE.txt",
+    "iframe.html": "./iframe.html",
+    "static/media/logo-monogram.a80dee4a.png": "./static/media/logo-monogram.a80dee4a.png",
+    "vendors~main.97974698.iframe.bundle.js.LICENSE.txt": "./vendors~main.97974698.iframe.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.c3d84206.iframe.bundle.js",
+    "vendors~main.97974698.iframe.bundle.js",
+    "static/css/main.29964548.chunk.css",
+    "main.f9bdb7b1.iframe.bundle.js"
+  ]
+}
