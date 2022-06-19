@@ -9,7 +9,7 @@ export default {
 export const WithShortText = (args) => <Button {...args}>Button</Button>;
 
 export const WithLongText = (args) => (
-  <Button {...args}>Welcome to Dev Launchers</Button>
+  <Button {...args}>Welcome to Dev Launcherss</Button>
 );
 
 export const Customizable = (args) => <Button {...args}>{args.text}</Button>;
