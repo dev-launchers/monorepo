@@ -6,6 +6,10 @@ on:
     paths: 
       - 'packages/UI/.storybook/**'
       - 'packages/UI/src/**'
+
+defaults:
+  run:
+    working-directory: packages/UI
 # What the action will do
 jobs:
   test:
@@ -20,5 +24,6 @@ jobs:
         # Options required for Chromatic's GitHub Action
         with:
           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
+          workingDir: packages/UI
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
