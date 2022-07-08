@@ -1,6 +1,10 @@
 const withPlugins = require("next-compose-plugins");
 const imagesPlugin = require("next-optimized-images");
-const withTM = require("next-transpile-modules")(["@devlaunchers/ideas", "@devlaunchers/site-projects"]); // pass the modules you would like to see transpiled
+const withTM = require("next-transpile-modules")([
+  "@devlaunchers/ideas",
+  "@devlaunchers/site-projects",
+  "@devlaunchers/dev-recruiters",
+]); // pass the modules you would like to see transpiled
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

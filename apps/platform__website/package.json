@@ -6,6 +6,7 @@
   "homepage": "http://devlaunchers.com/",
   "dependencies": {
     "@cloudflare/wrangler": "^1.16.1",
+    "@devlaunchers/dev-recruiters": "0.1.0",
     "@devlaunchers/ideas": "1.0.0",
     "@devlaunchers/site-projects": "0.1.0",
     "@ramonak/react-progress-bar": "^3.1.0",
