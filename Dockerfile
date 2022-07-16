@@ -24,11 +24,15 @@ RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
 
 # You only need to copy next.config.js if you are NOT using the default configuration
-COPY --from=builder /app/apps/platform__website/next.config.js ./
-COPY --from=builder /app/apps/platform__website/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/apps/platform__website/.next ./.next
-COPY --from=builder /app/apps/platform__website/node_modules ./node_modules
-COPY --from=builder /app/apps/platform__website/package.json ./package.json
+COPY --from=deps . .
+COPY --from=builder . .
+# COPY --from=deps /app/package.json ./
+# COPY --from=deps /app/node_modules ./node_modules
+# COPY --from=builder /app/apps/platform__website/next.config.js ./apps/platform__website/
+# COPY --from=builder /app/apps/platform__website/public ./apps/platform__website/public
+# COPY --from=builder --chown=nextjs:nodejs /app/apps/platform__website/.next ./apps/platform__website/.next
+# COPY --from=builder /app/apps/platform__website/node_modules ./apps/platform__website/node_modules
+# COPY --from=builder /app/apps/platform__website/package.json ./apps/platform__website/package.json
 USER nextjs
 
 EXPOSE 3000
