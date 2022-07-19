@@ -47,18 +47,18 @@ export default function Create(props) {
   };
   const afterOpenModal = () => {};
   const getCardById = (id) => {
-    const tabs = Object.keys(createPageData);
+    const tabs = Object.keys(createPageData || {});
     for (const tabKey of tabs) {
-      const sections = Object.keys(createPageData[tabKey]);
+      const sections = Object.keys(createPageData[tabKey] || {});
       for (const sectionKey of sections) {
-        const groups = Object.keys(createPageData[tabKey][sectionKey]);
+        const groups = Object.keys(createPageData[tabKey][sectionKey] || {});
         for (const groupKey of groups) {
           const cards = Object.keys(
-            createPageData[tabKey][sectionKey][groupKey]
+            createPageData[tabKey][sectionKey][groupKey] || {}
           );
           for (const cardKey of cards) {
             const thisCard =
-              createPageData[tabKey][sectionKey][groupKey][cardKey];
+              createPageData[tabKey][sectionKey][groupKey][cardKey] || {};
             if (thisCard.id === id) return thisCard;
           }
         }
@@ -162,11 +162,11 @@ export default function Create(props) {
           {
             // Have to do this hack for some reason (create empty tab if page not loaded)...
             // otherwise tabs break
-            Object.entries(createPageData).length === 0 ? <Tab></Tab> : ""
+            Object.entries(createPageData || {}).length === 0 ? <Tab></Tab> : ""
           }
           {
             // Render tabs from our dynamically built pageData object
-            Object.keys(createPageData).map((key) => (
+            Object.keys(createPageData || {}).map((key) => (
               <Tab key={`tab${key}`}>{key}</Tab>
             ))
           }
@@ -174,10 +174,10 @@ export default function Create(props) {
         {
           // Render sections and groups from our dynamically built pageData object
           // Render tab panels from our dynamically built pageData object
-          Object.values(createPageData).map((tab, i) => (
+          Object.values(createPageData || {}).map((tab, i) => (
             // render all sections for this tab
             <TabPanel key={i}>
-              {Object.keys(tab).map((sectionTitle) => {
+              {Object.keys(tab || {}).map((sectionTitle) => {
                 const section = tab[sectionTitle];
                 return <Section data={section} title={sectionTitle} key={i} />;
               })}

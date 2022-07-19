@@ -1,6 +1,9 @@
 const withPlugins = require("next-compose-plugins");
 const imagesPlugin = require("next-optimized-images");
-const withTM = require("next-transpile-modules")(["@devlaunchers/ideas", "@devlaunchers/site-projects"]); // pass the modules you would like to see transpiled
+const withTM = require("next-transpile-modules")([
+  "@devlaunchers/ideas",
+  "@devlaunchers/site-projects",
+]); // pass the modules you would like to see transpiled
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -49,5 +52,6 @@ const nextConfig = {
     // we have too many errors if you run npm run lint ,but after bug fixes we could enforce this.
     ignoreDuringBuilds: true,
   },
+  output: "standalone"
 };
 module.exports = withPlugins([[imagesPlugin], [withTM]], nextConfig);

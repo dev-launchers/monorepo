@@ -13,7 +13,7 @@ export default function CardGroup(props) {
         <span />
       )}
       <Collection cardGroupFlexDirection={props.cardGroupFlexDirection}>
-        {Object.keys(props.cards).length !== 0 &&
+        {Object.keys(props.cards || {}).length !== 0 &&
           props.cards.map((items, i) => (
             <Card
               cardData={items}
