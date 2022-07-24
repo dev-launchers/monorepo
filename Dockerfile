@@ -95,7 +95,6 @@ RUN --mount=type=cache,target=/root/.yarn3-cache,id=yarn3-cache \
 ###################################################################
 
 FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS runner
-RUN apk add --no-cache tree
 
 WORKDIR /app
 
@@ -125,4 +124,3 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 
 CMD ["./node_modules/.bin/next", "start", "apps/platform__website/", "-p", "${NEXTJS_APP_PORT:-3000}"]
-# CMD ["tree", "./", "-d"]
