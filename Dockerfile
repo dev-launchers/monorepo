@@ -81,7 +81,7 @@ COPY . .
 COPY --from=deps /workspace-install ./
 
 # # Optional: if the app depends on global /static shared assets like images, locales...
-# RUN yarn workspace nextjs-app share-static-hardlink && yarn workspace nextjs-app build
+RUN yarn workspace @devlaunchers/platform_website build
 
 # Does not play well with buildkit on CI
 # https://github.com/moby/buildkit/issues/1673
