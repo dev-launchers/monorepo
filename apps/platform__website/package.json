@@ -6,9 +6,10 @@
   "homepage": "http://devlaunchers.com/",
   "dependencies": {
     "@cloudflare/wrangler": "^1.16.1",
-    "@devlaunchers/ideas": "1.0.0",
-    "@devlaunchers/site-projects": "0.1.0",
+    "@devlaunchers/ideas": "*",
+    "@devlaunchers/site-projects": "*",
     "@ramonak/react-progress-bar": "^3.1.0",
+    "@types/styled-components": "5.1.25",
     "articles": "^0.2.2",
     "autosave": "^1.0.3",
     "axios": "^0.21.1",
@@ -35,13 +36,13 @@
     "react-toastify": "latest",
     "regenerator-runtime": "^0.13.7",
     "semantic-release": "^17.4.2",
-    "styled-components": "^5.3.1",
+    "styled-components": "5.3.5",
     "styled-normalize": "^8.0.7",
     "tabletop": "1.6.3",
     "wrangler": "^0.0.2"
   },
   "devDependencies": {
-    "@types/react": "16.9.17",
+    "@types/react": "18.0.15",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",

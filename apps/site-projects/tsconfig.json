@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/_app.jsx"  ],
+, "src/pages/_app.jsx", "src/components/common/Tag/StyledTag.js"  ],
   "exclude": [
     "node_modules"
   ]

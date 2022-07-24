@@ -38,7 +38,7 @@ export const Button = styled.a`
   width: 8em;
   padding: 0.5rem;
   background-color: ${({ theme, bgColor }) =>
-    bgColor || theme.colors.NEUTRAL_2};
+    bgColor || theme?.colors?.NEUTRAL_2 || ""};
   color: #353535;
   border-radius: 5px;
 `;

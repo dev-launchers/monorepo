@@ -1,45 +1,128 @@
-# Install dependencies only when needed
-FROM node:14.19.3-bullseye AS deps
-WORKDIR /app
-COPY package.json .yarnrc.yml yarn.lock ./
-RUN yarn install --frozen-lockfile
+#
+# EXAMPLE OF MULTISTAGE BUILD FOR MONOREPOS
+#
+# @link https://github.com/belgattitude/nextjs-monorepo-example
+#
 
-# Rebuild the source code only when needed
-FROM node:14.19.3-bullseye AS builder
+###################################################################
+# Stage 1: Install all workspaces (dev)dependencies               #
+#          and generates node_modules folder(s)                   #
+# ----------------------------------------------------------------#
+# Notes:                                                          #
+#   1. this stage relies on buildkit features                     #
+#   2. depend on .dockerignore, you must at least                 #
+#      ignore: all **/node_modules folders and .yarn/cache        #
+###################################################################
+
+ARG NODE_VERSION=16
+ARG ALPINE_VERSION=3.15
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS deps
+RUN apk add --no-cache rsync
+
+WORKDIR /workspace-install
+
+
+COPY yarn.lock .yarnrc.yml ./
+COPY .yarn/ ./.yarn/
+
+# Specific to monerepo's as docker COPY command is pretty limited
+# we use buidkit to prepare all files that are necessary for install
+# and that will be used to invalidate docker cache.
+#
+# Files are copied with rsync:
+#
+#   - All package.json present in the host (root, apps/*, packages/*)
+#   - All schema.prisma (cause prisma will generate a schema on postinstall)
+#
+RUN --mount=type=bind,target=/docker-context \
+    rsync -amv --delete \
+          --exclude='node_modules' \
+          --exclude='*/node_modules' \
+          --include='package.json' \
+          --include='schema.prisma' \
+          --include='*/' --exclude='*' \
+          /docker-context/ /workspace-install/;
+
+# @see https://www.prisma.io/docs/reference/api-reference/environment-variables-reference#cli-binary-targets
+ENV PRISMA_CLI_BINARY_TARGETS=linux-musl
+
+#
+# To speed up installations, we override the default yarn cache folder
+# and mount it as a buildkit cache mount (builkit will rotate it if needed)
+# This strategy allows to exclude the yarn cache in subsequent docker
+# layers (size benefit) and reduce packages fetches.
+#
+# PS:
+#  1. Cache mounts can be used in CI (github actions)
+#  2. To manually clear the cache
+#     > docker builder prune --filter type=exec.cachemount
+#
+# Does not play well with buildkit on CI
+# https://github.com/moby/buildkit/issues/1673
+
+RUN --mount=type=cache,target=/root/.yarn3-cache,id=yarn3-cache \
+    YARN_CACHE_FOLDER=/root/.yarn3-cache \
+    yarn install --immutable --inline-builds
+
+
+###################################################################
+# Stage 2: Build the app                                          #
+###################################################################
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS builder
+ENV NODE_ENV=production
+ENV NEXTJS_IGNORE_ESLINT=1
+ENV NEXTJS_IGNORE_TYPECHECK=0
+
 WORKDIR /app
+
 COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-# RUN ls -lR ./node_modules
-# RUN ls -lR Ipackages ./
-RUN yarn workspace @devlaunchers/platform_website install
-RUN yarn workspace @devlaunchers/platform_website build
+COPY --from=deps /workspace-install ./
 
-# Production image, copy all the files and run next
-FROM node:14-alpine AS runner
+# # Optional: if the app depends on global /static shared assets like images, locales...
+# RUN yarn workspace nextjs-app share-static-hardlink && yarn workspace nextjs-app build
+
+# Does not play well with buildkit on CI
+# https://github.com/moby/buildkit/issues/1673
+RUN --mount=type=cache,target=/root/.yarn3-cache,id=yarn3-cache \
+    SKIP_POSTINSTALL=1 \
+    YARN_CACHE_FOLDER=/root/.yarn3-cache \
+    yarn workspaces focus @devlaunchers/platform_website --production
+
+###################################################################
+# Stage 3: Extract a minimal image from the build                 #
+###################################################################
+
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS runner
+RUN apk add --no-cache tree
+
 WORKDIR /app
 
 ENV NODE_ENV production
 
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
-# You only need to copy next.config.js if you are NOT using the default configuration
-# COPY --from=deps . .
-# COPY --from=builder . .
-COPY --from=deps /app/package.json ./
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=builder /app/apps/platform__website/next.config.js ./apps/platform__website/
+COPY --from=builder /app/apps/platform__website/next.config.js \
+                    /app/apps/platform__website/package.json \
+                    ./apps/platform__website/
+COPY --from=builder /app/apps/ideas/next.config.js \
+                    /app/apps/ideas/package.json \
+                    ./apps/ideas/
+COPY --from=builder /app/apps/site-projects/next.config.js \
+                    /app/apps/site-projects/package.json \
+                    ./apps/site-projects/
 COPY --from=builder /app/apps/platform__website/public ./apps/platform__website/public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/platform__website/.next ./apps/platform__website/.next
-COPY --from=builder /app/apps/platform__website/node_modules ./apps/platform__website/node_modules
-COPY --from=builder /app/apps/platform__website/package.json ./apps/platform__website/package.json
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
 USER nextjs
 
-EXPOSE 3000
+EXPOSE ${NEXTJS_APP_PORT:-3000}
 
-# Next.js collects completely anonymous telemetry data about general usage.
-# Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry.
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
-CMD ["yarn", "workspace", "@devlaunchers/platform_website", "start"]
+
+CMD ["./node_modules/.bin/next", "start", "apps/platform__website/", "-p", "${NEXTJS_APP_PORT:-3000}"]
+# CMD ["tree", "./", "-d"]
