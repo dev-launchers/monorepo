@@ -17,9 +17,9 @@
 ARG NODE_VERSION=16
 ARG ALPINE_VERSION=3.15
 
-FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS deps
-RUN apk add --no-cache rsync
-
+FROM node:14.19.3-bullseye AS deps
+# RUN apk add --no-cache rsync
+RUN apt update && apt install -y rsync
 WORKDIR /workspace-install
 
 
@@ -70,7 +70,7 @@ RUN --mount=type=cache,target=/root/.yarn3-cache,id=yarn3-cache \
 # Stage 2: Build the app                                          #
 ###################################################################
 
-FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS builder
+FROM node:14.19.3-bullseye AS builder
 ENV NODE_ENV=production
 ENV NEXTJS_IGNORE_ESLINT=1
 ENV NEXTJS_IGNORE_TYPECHECK=0
