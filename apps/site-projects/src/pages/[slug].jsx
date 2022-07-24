@@ -1,4 +1,3 @@
-import { GetStaticProps, GetStaticPaths } from "next";
 import axios from "axios";
 import Head from "next/head";
 import Project from "../components/modules/Projects/Project";
@@ -6,7 +5,7 @@ import { env } from "../utils/EnvironmentVariables";
 
 // const data = require("../components/modules/Projects/data.json");
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const { data } = await axios(
     `${env().STRAPI_URL}/projects?_publicationState=live`,
     {
@@ -28,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { slug } = context.params;
   const { data: project } = await axios.get(
     `${env().STRAPI_URL}/projects/${slug}`,

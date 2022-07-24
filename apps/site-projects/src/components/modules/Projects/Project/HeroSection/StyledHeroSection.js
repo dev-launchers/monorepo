@@ -2,11 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding-top: 2rem;
-  color: ${({ theme }) => {
-      console.log(theme);
-      
-      return theme?.colors?.NEUTRAL_2
-    }};
+  color: ${({ theme }) => theme?.colors?.NEUTRAL_2};
   text-align: center;
 
   @media (orientation: portrait) {

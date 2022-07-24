@@ -36,8 +36,8 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   output: "standalone",
-  experimental: { 
-    externalDir: true,
-  }
+  // experimental: { 
+  //   externalDir: true,
+  // }
 };
 module.exports = withPlugins([[imagesPlugin], [withTM]], nextConfig);

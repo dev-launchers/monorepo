@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectsAggregator, { getStaticProps } from "../../pages/index.tsx";
+import ProjectsAggregator, { getStaticProps } from "../../pages/index.jsx";
 
 export const ProjectsAggregatorPage = (args, { loaded: { projects } }) => (
   <ProjectsAggregator {...args} />

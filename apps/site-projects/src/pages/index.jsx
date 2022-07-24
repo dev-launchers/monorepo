@@ -1,12 +1,11 @@
 import axios from "axios";
-import { GetStaticProps } from "next";
 import Head from "next/head";
 import Projects from "../components/modules/Projects";
 import { env } from "../utils/EnvironmentVariables";
 
 // const projectsData = require("../components/modules/Projects/data.json");
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps = async () => {
   const { data: projects } = await axios(
     `${env().STRAPI_URL}/projects?_publicationState=live`,
     {
