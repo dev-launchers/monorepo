@@ -29,7 +29,7 @@
     "test": "run-s 'test:*'",
     "test:unit": "echo \"No tests yet\"",
     "fix:staged-files": "lint-staged --allow-empty",
-    "fix:all-files": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+    "fix:all-files": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -67,18 +67,16 @@
     "@storybook/node-logger": "^6.4.17",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.4.17",
-    "@types/react": "^17.0.38",
-    "chromatic": "^6.6.3",
-    "prettier": "^2.5.1",
-    "typescript": "^4.5.5",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@testing-library/react-hooks": "7.0.1",
     "@types/node": "16.4.10",
-    "@types/react-dom": "^17.0.38",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "17.0.11",
     "@typescript-eslint/eslint-plugin": "4.29.0",
     "@typescript-eslint/parser": "4.29.0",
     "camelcase": "6.2.0",
+    "chromatic": "^6.6.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.23.4",
@@ -91,9 +89,11 @@
     "eslint-plugin-testing-library": "4.10.1",
     "jest": "27.0.6",
     "npm-run-all": "4.1.5",
+    "prettier": "^2.5.1",
     "rimraf": "3.0.2",
     "shell-quote": "1.7.2",
-    "ts-jest": "27.0.4"
+    "ts-jest": "27.0.4",
+    "typescript": "^4.5.5"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@devlaunchers/components@0.1.0"
