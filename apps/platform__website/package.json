@@ -59,8 +59,14 @@
     "start": "next start",
     "prettier": "prettier --write \"./**/*.{js,jsx,json}\"",
     "pre-commit": "eslint '*/**/*.{js,jsx}' --fix",
-    "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rimraf --no-glob ./tsconfig.tsbuildinfo",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "test": "run-s 'test:*'",
+    "test:unit": "echo \"No tests yet\"",
+    "fix:staged-files": "lint-staged --allow-empty",
+    "fix:all-files": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
   },
   "browserslist": [
     ">0.2%",
