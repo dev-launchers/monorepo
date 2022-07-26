@@ -1,20 +1,32 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "./src",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@/lib/*": ["./lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/public/*": ["../public/*"],
+      "@/themes/*": ["./themes/*"],
+      "@devlaunchers/components/*": ["../../../packages/components/src/*"],
+      "@devlaunchers/components": ["../../../packages/components/src/index"],
+      "@devlaunchers/core-lib/*": ["../../../packages/core-lib/src/*"],
+      "@devlaunchers/core-lib": ["../../../packages/core-lib/src/index"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["**/node_modules", "**/.*/", ".next"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.json"
+  ]
 }

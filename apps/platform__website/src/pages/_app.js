@@ -3,6 +3,7 @@ import { Router, useRouter } from "next/router";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "styled-components";
+
 import GlobalStyle from "../styles/globals";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -46,26 +47,28 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <div>
-          <Head>
-            <script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=AW-599284852"
-            ></script>
-          </Head>
+      <UserDataProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <div>
+            <Head>
+              <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=AW-599284852"
+              ></script>
+            </Head>
 
-          <div className="App">
-            <ToastContainer
-              className="toast-container"
-              toastClassName="toast"
-              progressClassName="toast-progress"
-            />
+            <div className="App">
+              <ToastContainer
+                className="toast-container"
+                toastClassName="toast"
+                progressClassName="toast-progress"
+              />
+            </div>
+            <Component {...pageProps} />
           </div>
-          <Component {...pageProps} />
-        </div>
-      </ThemeProvider>
+        </ThemeProvider>
+      </UserDataProvider>
     </>
   );
 }

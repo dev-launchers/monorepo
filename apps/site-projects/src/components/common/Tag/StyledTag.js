@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.span`
   padding: 0.5rem 1rem;
-  border: 2px solid ${({ theme }) => theme.colors.NEUTRAL_2};
+  border: 2px solid ${(props) => props.theme?.colors?.NEUTRAL_2};
   color: ${({ theme }) => theme.colors.NEUTRAL_2};
   font-family: ${({ theme }) => theme.fonts.headline};
   font-weight: bold;

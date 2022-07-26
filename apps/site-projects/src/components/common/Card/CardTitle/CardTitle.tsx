@@ -28,26 +28,26 @@ export default function CardTitle({
 }: Props) {
   return (
     <Heading
-      cardTitleAlignment={data.titleAlignment}
-      cardTitleSize={data.titleSize}
+      cardTitleAlignment={data?.titleAlignment}
+      cardTitleSize={data?.titleSize}
       cardTitleUnderline={{
-        color: data.titleUnderlineColor,
-        thickness: data.titleUnderlineThickness,
-        type: data.titleUnderlineType,
+        color: data?.titleUnderlineColor,
+        thickness: data?.titleUnderlineThickness,
+        type: data?.titleUnderlineType,
       }}
     >
       {isLinkingInside ? (
-        <Link href={`${pathname}${data.href}`} passHref>
-          <Title>{data.title}</Title>
+        <Link href={`${pathname}/${data?.href}`} passHref>
+          <Title>{data?.title}</Title>
         </Link>
       ) : (
-        <Title target="_blank" href={data.href}>
-          {data.title}
+        <Title target="_blank" href={data?.href}>
+          {data?.title}
         </Title>
       )}
 
       {attachment && (
-        <a href={data.repoUrl} target="_blank" rel="noreferrer">
+        <a href={data?.repoUrl} target="_blank" rel="noreferrer">
           <Image
             alt="github"
             height="32"

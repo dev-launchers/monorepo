@@ -67,60 +67,60 @@ const Card: React.FC<CardProps> = (props) => {
     <Container
       style={props.style}
       size={props.size}
-      onClick={props.cardData.onClick}
+      onClick={props?.cardData?.onClick}
     >
       <Content
         size={props.size}
-        textAlignment={props.cardData.textAlignment}
-        flexDirection={props.cardData.flexDirection}
+        textAlignment={props?.cardData?.textAlignment}
+        flexDirection={props?.cardData?.flexDirection}
       >
         <ImageHolder
           size={props.size}
-          bgColor={props.cardData.imageHolderBackgroundColor}
+          bgColor={props?.cardData?.imageHolderBackgroundColor}
         >
-          {props.cardData.tags && (
+          {props?.cardData?.tags && (
             <TagsContainer>
-              {props.cardData.tags.map((tag, i) => (
+              {props?.cardData?.tags.map((tag, i) => (
                 <Tag filled text={tag} key={i} />
               ))}
             </TagsContainer>
           )}
           {props.isLinkingInside ? (
-            <Link href={`${router?.asPath}${props.cardData.href}`} passHref>
+            <Link href={`${router?.asPath}/${props?.cardData?.href}`} passHref>
               <a rel="noopener noreferrer">
-                <Image alt="" imageSrc={props.cardData.imageSrc} />
+                <Image alt="" imageSrc={props?.cardData?.imageSrc} />
               </a>
             </Link>
           ) : (
             <a
-              href={props.cardData.href}
+              href={props?.cardData?.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image alt="" imageSrc={props.cardData.imageSrc} />
+              <Image alt="" imageSrc={props?.cardData?.imageSrc} />
             </a>
           )}
         </ImageHolder>
         <RainbowBar height=".3rem" />
-        <DataHolder size={props.size}>
+        <DataHolder size={props?.size}>
           <CardTitle
-            data={props.cardData}
-            isLinkingInside={props.isLinkingInside}
+            data={props?.cardData}
+            isLinkingInside={props?.isLinkingInside}
             pathname={router?.asPath}
           />
-          {props.cardData.secondaryText && (
-            <SecondaryText>{props.cardData.secondaryText}</SecondaryText>
+          {props?.cardData?.secondaryText && (
+            <SecondaryText>{props?.cardData?.secondaryText}</SecondaryText>
           )}
-          <Description>{props.cardData.description}</Description>
+          <Description>{props?.cardData?.description}</Description>
         </DataHolder>
       </Content>
-      {props.cardData.attachments && (
+      {props?.cardData?.attachments && (
         <AttachmentsContainer>
-          <Attachments data={props.cardData.attachments} />
+          <Attachments data={props?.cardData?.attachments} />
         </AttachmentsContainer>
       )}
-      {props.cardData.actions && (
-        <ActionsContainer>{props.cardData.actions}</ActionsContainer>
+      {props?.cardData?.actions && (
+        <ActionsContainer>{props?.cardData?.actions}</ActionsContainer>
       )}
     </Container>
   );
