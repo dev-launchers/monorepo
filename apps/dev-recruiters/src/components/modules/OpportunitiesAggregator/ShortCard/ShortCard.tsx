@@ -1,4 +1,4 @@
-import { Project } from "@models/project";
+import { Project } from "@devlaunchers/models/project";
 import Link from "next/link";
 import { Id } from "react-toastify";
 import { useTheme } from "styled-components";

@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import { useRouter } from "next/router";
 import { useUserDataContext } from "@contexts/UserDataContext";
 import Slider from "@components/common/Slider";
-import { NewApplicant } from "@models/newApplicant";
-import { SkillLevel } from "@models/level";
+import { NewApplicant } from "@devlaunchers/models/newApplicant";
+import { SkillLevel } from "@devlaunchers/models/level";
 import Collapsible from "@components/common/Collapsible";
 import agent from "@utils/agent";
 import {

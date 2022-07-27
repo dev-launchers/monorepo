@@ -13,7 +13,7 @@ import {
   Vision,
   UsernameAvatar,
 } from "./StyledProductHeader";
-import { Leader2, Project, Team } from "@models/project";
+import { Leader2, Project, Team } from "@devlaunchers/models/project";
 
 interface ProductHeaderProps
   extends Pick<

@@ -1,10 +1,5 @@
 import { Opportunity } from "./opportunity";
 
-
-
-
-
-
 export interface Formats {
 }
 

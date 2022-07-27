@@ -1,4 +1,4 @@
-import { Opportunity } from "@models/opportunity"
+import { Opportunity } from "@devlaunchers/models/opportunity"
 
 
 
