@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface StyledProps {
   cardTitleAlignment?: string;
   cardTitleSize?: string,
-  cardTitleUnderline?: { color: string, thickness: string, type: string }
+  cardTitleUnderline: { color?: string, thickness?: string, type?: string }
 }
 
 export const Heading = styled.div<StyledProps>`

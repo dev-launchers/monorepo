@@ -1,35 +1,33 @@
 {
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es5",
-    "baseUrl": "./",
-    "paths": {
-      "@components/*": [
-        "../dev-recruiters/src/components/*"
-      ],
-    },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/lib/*": ["./lib/*"],
+      "@/components/*": ["./components/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/public/*": ["../public/*"],
+      "@/themes/*": ["./themes/*"],
+      "@devlaunchers/site-projects/*": ["../../../packages/site-projects/src/pages/*"],
+      "@devlaunchers/components/*": ["../../../packages/UI/src/*"],
+      "@devlaunchers/components": ["../../../packages/UI/src/index"],
+      "@devlaunchers/core-lib/*": ["../../../packages/core-lib/src/*"],
+      "@devlaunchers/core-lib": ["../../../packages/core-lib/src/index"]
+    }
   },
+  "exclude": ["**/node_modules", "**/.*/", ".next"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.mjs",
+    "**/*.json"
   ]
 }

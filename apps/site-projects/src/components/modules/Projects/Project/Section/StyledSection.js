@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: ${({ bgColor, theme }) =>
-    bgColor || theme.colors.NEUTRAL_2};
+    bgColor || theme?.colors?.NEUTRAL_2};
   color: ${({ txtColor, theme }) =>
-    txtColor ? theme.colors.NEUTRAL_1 : theme.colors.NEUTRAL_2};
+    txtColor ? theme?.colors?.NEUTRAL_1 : theme?.colors?.NEUTRAL_2};
 
   p {
     margin: 0;

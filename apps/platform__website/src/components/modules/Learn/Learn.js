@@ -26,11 +26,11 @@ export default function Learn() {
             {
               // Have to do this hack for some reason (create empty tab if page not loaded)...
               // otherwise tabs break
-              Object.entries(learnPageData).length === 0 ? <Tab></Tab> : ""
+              Object.entries(learnPageData || {}).length === 0 ? <Tab></Tab> : ""
             }
             {
               // Render tabs from our dynamically built learnPageData object
-              Object.keys(learnPageData).map((key) => (
+              Object.keys(learnPageData || {}).map((key) => (
                 <Tab key={`tab${key}`}>{key}</Tab>
               ))
             }
@@ -38,7 +38,7 @@ export default function Learn() {
           {
             // Render sections and groups from our dynamically built learnPageData object
             // Render tab panels from our dynamically built learnPageData object
-            Object.values(learnPageData).map((tab, i) => (
+            Object.values(learnPageData || {}).map((tab, i) => (
               // render all sections for this tab
               <TabPanel key={i}>
                 {Object.keys(tab).map((sectionTitle) => {

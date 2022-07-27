@@ -1,9 +1,10 @@
 import React from "react";
-import { withTheme } from "styled-components";
+import { useTheme, withTheme } from "styled-components";
 import Section from "../Section";
 import { Wrapper, ButtonsContainer, Button } from "./StyledVision";
 
-const Vision = ({ theme, scrollMethods,vision }) => {
+const Vision = ({ scrollMethods,vision }) => {
+  const theme = useTheme()
   if (vision === ""){
     return null;
   }
@@ -26,7 +27,7 @@ const Vision = ({ theme, scrollMethods,vision }) => {
           <Button
             style={{ cursor: "pointer" }}
             onClick={scrollMethods.scrollToDonate}
-            bgColor={theme.colors.ACCENT_2}
+            bgColor={theme?.colors?.ACCENT_2}
           >
             <i className="fas fa-coins"></i> Donate
           </Button>

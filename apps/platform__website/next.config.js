@@ -8,22 +8,6 @@ const withTM = require("next-transpile-modules")([
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/:path*",
-        destination: `/:path*`,
-      },
-      {
-        source: "/projects",
-        destination: "https://projects.devlaunchers.org/projects",
-      },
-      {
-        source: "/projects/:path*",
-        destination: `https://projects.devlaunchers.org/projects/:path*`,
-      },
-    ];
-  },
   async redirects() {
     return [
       {
@@ -45,7 +29,6 @@ const nextConfig = {
     ],
     disableStaticImages: true,
   },
-  webpack5: true,
   reactStrictMode: true, // It helps you avoid legacy code, and deprecated APIs.
   eslint: {
     // Warning: Dangerously allow production builds to successfully complete even if
@@ -53,5 +36,9 @@ const nextConfig = {
     // we have too many errors if you run npm run lint ,but after bug fixes we could enforce this.
     ignoreDuringBuilds: true,
   },
+  output: "standalone",
+  experimental: { 
+    externalDir: true,
+  }
 };
 module.exports = withPlugins([[imagesPlugin], [withTM]], nextConfig);

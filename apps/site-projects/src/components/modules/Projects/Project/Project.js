@@ -20,6 +20,7 @@ import Milestones from "./Milestones";
 import JoinSupport from "./JoinSupport";
 import HelpBuild from "./HelpBuild";
 import Sessions from "./Sessions";
+import {useUserDataContext} from "../../../../context/UserDataContext"
 
 const Project = ({ project, theme }) => {
   const router = useRouter();
@@ -33,6 +34,8 @@ const Project = ({ project, theme }) => {
     return <div>Loading...</div>;
   }
 
+  const userData = useUserDataContext();
+
   return (
     <Wrapper>
       <div id="background" />
@@ -41,7 +44,7 @@ const Project = ({ project, theme }) => {
         projectCatchPhrase={project.catchPhrase}
         heroImage={project.heroImage}
       />
-      <Tags tags={project?.keywords} />
+      <Tags tags={project?.interests} />
       <Vision
         vision={project?.vision || ""}
         scrollMethods={{
@@ -53,9 +56,9 @@ const Project = ({ project, theme }) => {
         description={project?.description}
         images={project?.Images}
       />
-      <Role ref={roleRef} data={project?.openPositions} projectSlug={project.slug} />
+      <Role ref={roleRef} data={project?.opportunities} projectSlug={project.slug} />
       <Milestones data={project?.board?.ProjectMilestone} />
-      <Sessions calendarId={project.calendarId} />
+      {userData.id && <Sessions calendarId={project.calendarId} />}
       <Team data={project.team} />
       <JoinSupport
         ref={donateRef}
