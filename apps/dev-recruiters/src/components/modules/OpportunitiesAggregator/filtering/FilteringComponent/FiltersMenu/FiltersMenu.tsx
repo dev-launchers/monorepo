@@ -1,9 +1,9 @@
 import CheckboxList from '@components/common/CheckboxList';
 import Collapsible from '@components/common/Collapsible';
-import { EnumToArray } from '@utils/enumToArray';
-import { SkillLevel } from 'src/models/level';
-import { Opportunity } from 'src/models/opportunity';
-import { ProjectParams } from 'src/models/projectFilters';
+import { EnumToArray } from '@devlaunchers/utility/enumToArray';
+import { SkillLevel } from '@devlaunchers/models/level';
+import { Opportunity } from '@devlaunchers/models/opportunity';
+import { ProjectParams } from '@devlaunchers/models/projectFilters';
 import { ProjectType } from '../../projectEnums';
 import {
   CloseButton,

@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import { Opportunity } from "../models/opportunity";
-import { Project } from "../models/project";
-import agent from "@utils/agent";
+import { Opportunity } from "@devlaunchers/models/opportunity";
+import { Project } from "@devlaunchers/models/project";
+import agent from "@devlaunchers/utility/agent";
 import OpportunitiesAggregator from "@components/modules/OpportunitiesAggregator/OpportunitiesAggregator";
 
 export const getStaticProps: GetStaticProps = async (context) => {

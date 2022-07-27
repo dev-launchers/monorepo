@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { SkillLevel } from '../../../../models/level';
-import { Opportunity } from '../../../../models/opportunity';
-import { Project, ProjectLite } from '../../../../models/project';
-import { ProjectParams } from '../../../../models/projectFilters';
+import { SkillLevel } from '@devlaunchers/models/level';
+import { Opportunity } from '@devlaunchers/models/opportunity';
+import { Project, ProjectLite } from '@devlaunchers/models/project';
+import { ProjectParams } from '@devlaunchers/models/projectFilters';
 
 export default function useProjects() {
   const [projects, setProjects] = useState<ProjectLite[]>([]);

@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Project } from '../../../../../models/project';
+import { Project } from '@devlaunchers/models/project';
 import { ProjectType } from '../projectEnums';
 import ProjectsList from '../ProjectsList';
 import useProjects from '../useProject';
-import { EnumToArray } from '@utils/enumToArray';
+import { EnumToArray } from '@devlaunchers/utility/enumToArray';
 import CheckboxDropdown from '@components/common/CheckboxDropdown';
 import {
   Wrapper,
@@ -17,8 +17,8 @@ import {
   CommitmentSection,
   FilterMenuButton,
 } from './StyledFilteringComponent';
-import { Opportunity } from '../../../../../models/opportunity';
-import { SkillLevel } from '../../../../../models/level';
+import { Opportunity } from '@devlaunchers/models/opportunity';
+import { SkillLevel } from '@devlaunchers/models/level';
 import SearchComponent from '../SearchComponent';
 import Slider from '@components/common/Slider';
 import FiltersMenu from './FiltersMenu';
