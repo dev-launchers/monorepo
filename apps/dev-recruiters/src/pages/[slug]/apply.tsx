@@ -1,6 +1,6 @@
 import Head from "next/head";
-import SignUpForm from "@components/modules/FormPage/signUpForm";
-import BoxContainer from "@components/common/BoxContainer";
+import SignUpForm from "../../components/modules/FormPage/signUpForm";
+import BoxContainer from "../../components/common/BoxContainer";
 function apply() {
   return (
     <>

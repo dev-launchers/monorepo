@@ -1,6 +1,6 @@
 import Head from "next/head";
-import ConfirmationPage from "@components/modules/ConfirmationPage/confirmationPage";
-import BoxContainer from "@components/common/BoxContainer";
+import ConfirmationPage from "../components/modules/ConfirmationPage/confirmationPage";
+import BoxContainer from "../components/common/BoxContainer";
 function confirmation() {
   return (
     <>

@@ -1,5 +1,5 @@
-import CheckboxList from '@components/common/CheckboxList';
-import Collapsible from '@components/common/Collapsible';
+import CheckboxList from '../../../../../common/CheckboxList';
+import Collapsible from '../../../../../common/Collapsible';
 import { EnumToArray } from '@devlaunchers/utility/enumToArray';
 import { SkillLevel } from '@devlaunchers/models/level';
 import { Opportunity } from '@devlaunchers/models/opportunity';
@@ -72,7 +72,7 @@ export default function FiltersMenu({
             keyProperty={'name'}
             items={EnumToArray(SkillLevel)}
             onChange={handleLevelChange}
-            selectedItems={projectParams.level}
+            selectedItems={projectParams.level as SkillLevel[]}
           />
           {/* <List>
             {EnumToArray(SkillLevel).map((opportunity, index) => (
@@ -105,7 +105,7 @@ export default function FiltersMenu({
               keyProperty={'title'}
               items={opportunities}
               onChange={handleOpportunityChange}
-              selectedItems={projectParams.opportunity}
+              selectedItems={projectParams.opportunity as string[]}
             />
           </Collapsible>
         </Section>

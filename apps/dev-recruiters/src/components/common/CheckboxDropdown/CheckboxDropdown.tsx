@@ -12,24 +12,24 @@ import CheckboxList from '../CheckboxList';
  * @returns (key, value) => Value , (ket, !value) => key, (!key,!value) => item
  */
 
-interface Props {
+interface Props<T> {
   id?: any;
   title: string;
   keyProperty?: any | undefined;
   valueProperty?: any | undefined;
   items: any[];
-  selectedItems?: any[];
+  selectedItems?: T[];
   onChange: (value: any) => void;
 }
 
-export default function CheckboxDropdown({
+export default function CheckboxDropdown<T>({
   title,
   items,
   keyProperty,
   valueProperty,
   selectedItems,
   onChange,
-}: Props) {
+}: Props<T>) {
   return (
     <AppDropDown title={title}>
       <CheckboxList

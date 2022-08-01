@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Opportunity } from "@devlaunchers/models/opportunity";
 import { Project } from "@devlaunchers/models/project";
 import agent from "@devlaunchers/utility/agent";
-import OpportunitiesAggregator from "@components/modules/OpportunitiesAggregator/OpportunitiesAggregator";
+import OpportunitiesAggregator from "../components/modules/OpportunitiesAggregator/OpportunitiesAggregator";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   let projects: Project[] = [];

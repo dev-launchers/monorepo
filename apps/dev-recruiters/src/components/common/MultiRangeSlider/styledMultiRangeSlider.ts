@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   margin-top: 34px;
   position: relative;
   display: flex;

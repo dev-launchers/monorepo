@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { Theme } from '../../../styles/theme';
+
 
 export const Container = styled.div<{
-  bgColor?: string;
+  bgColor?: Partial<keyof Theme['colors']>;
   marginTop?: number;
   marginBottom?: number;
 }>`
@@ -9,7 +11,7 @@ export const Container = styled.div<{
   width: 100;
   height: auto;
   background: ${({ theme, bgColor }) =>
-    bgColor ? theme.colors[bgColor] : 'transparent'};
+    bgColor ? theme?.colors[bgColor as keyof typeof bgColor] : 'transparent'};
 `;
 
 export const Content = styled.div<{

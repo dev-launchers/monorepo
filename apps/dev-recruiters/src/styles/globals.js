@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
+import { createGlobalStyle } from "styled-components";
+import { normalize } from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -14,7 +14,7 @@ body {
   margin: 0;
   /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   color: ${({ theme }) => theme.colors.NEUTRAL_1};
   background-color: ${({ theme }) => theme.colors.NEUTRAL_2};
 }

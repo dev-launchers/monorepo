@@ -10,9 +10,9 @@ export const FiltersWrapper = styled.div`
 `;
 
 export const SectionTitle = styled.p<{ Mobile?: boolean }>`
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   font-size: 18px;
-  color: ${({ theme }) => theme.colors.White};
+  color: ${({ theme }) => theme?.colors?.White};
   padding-bottom: 20.5px;
 
   margin: 0;
@@ -57,12 +57,12 @@ export const CommitmentSection = styled.div`
     display: flex;
     flex-direction: column;
 
-    background-color: ${({ theme }) => theme.colors.BrightGray};
-    color: ${({ theme }) => theme.colors.Black};
+    background-color: ${({ theme }) => theme?.colors?.BrightGray};
+    color: ${({ theme }) => theme?.colors?.Black};
     border-radius: 10px;
 
     & p {
-      color: ${({ theme }) => theme.colors.Black};
+      color: ${({ theme }) => theme?.colors?.Black};
     }
 
     & #sliderContainer {
@@ -137,7 +137,7 @@ export const ChipsListItem = styled.li`
   padding-right: 0;
   border-radius: 1.25rem;
   width: full;
-  color: ${({ theme }) => theme.colors.AntiFlashWhite};
+  color: ${({ theme }) => theme?.colors?.AntiFlashWhite};
 
   &:hover {
     filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04))
@@ -152,7 +152,7 @@ export const ChipsListItem = styled.li`
 
   & button {
     background-color: transparent;
-    color: ${({ theme }) => theme.colors.AntiFlashWhite};
+    color: ${({ theme }) => theme?.colors?.AntiFlashWhite};
     border: none;
     padding-right: 1rem;
   }
@@ -174,14 +174,14 @@ export const FilterMenuButton = styled.button`
   box-shadow: 0px 1.33333px 1.33333px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  color: ${({ theme }) => theme.colors.OuterSpace};
-  background: ${({ theme }) => theme.colors.BrightGray};
+  color: ${({ theme }) => theme?.colors?.OuterSpace};
+  background: ${({ theme }) => theme?.colors?.BrightGray};
   border: none;
   padding: 5px 10px;
   padding-right: 32px;
 
   & svg {
-    stroke: ${({ theme }) => theme.colors.OuterSpace};
+    stroke: ${({ theme }) => theme?.colors?.OuterSpace};
     margin-right: 5px;
     height: 25px;
     width: 25px;

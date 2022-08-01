@@ -4,7 +4,7 @@ export const CheckboxContainer = styled.label`
   position: relative;
   box-sizing: border-box;
   display: block;
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   width: 100%;
   margin: 0;
   cursor: pointer;
@@ -26,7 +26,7 @@ export const CheckboxContainer = styled.label`
 
 export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
   &:checked ~ .checkmark {
-    background-color: ${({ theme }) => theme.colors.Crayola};
+    background-color: ${({ theme }) => theme?.colors?.Crayola};
   }
 
   &:checked ~ .checkmark:after {
@@ -40,8 +40,8 @@ export const CheckMark = styled.div`
   right: 0;
   height: 18px;
   width: 18px;
-  background-color: ${({ theme }) => theme.colors.White};
-  border: 1px solid ${({ theme }) => theme.colors.Crayola};
+  background-color: ${({ theme }) => theme?.colors?.White};
+  border: 1px solid ${({ theme }) => theme?.colors?.Crayola};
   border-radius: 3.03694px;
   &:after {
     content: '';

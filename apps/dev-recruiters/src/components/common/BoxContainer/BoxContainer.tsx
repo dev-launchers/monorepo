@@ -1,7 +1,8 @@
+import { Theme } from '../../../styles/theme';
 import { Container, Content } from './StyledBoxContainer';
 
 interface Props {
-  bgColor?: string;
+  bgColor?: Partial<keyof Theme['colors']>;
   paddingHorizontal?: number;
   paddingVertical?: number;
   marginTop?: number;

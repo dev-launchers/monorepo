@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-use-before-define
-import { Theme } from "@styles/theme";
 import React from "react";
 import { useTheme } from "styled-components";
 // eslint-disable-next-line import/extensions

@@ -7,7 +7,7 @@ import { ProjectParams } from '@devlaunchers/models/projectFilters';
 export default function useProjects() {
   const [projects, setProjects] = useState<ProjectLite[]>([]);
   const [projectsLoaded, setProjectsLoaded] = useState(false);
-  const [filteredProjects, setFilteredProjects] = useState<ProjectLite[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<ProjectLite[]>();
   const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
   const [opportunitiesLoaded, setOpportunitiesLoaded] = useState(false);
   const [projectParams, setProjectParams] = useState<ProjectParams>({
@@ -71,7 +71,7 @@ export default function useProjects() {
   };
 
   const handleRemoveOpportunity = (value: string) => {
-    const opportunity = projectParams.opportunity.filter((p) => p !== value);
+    const opportunity = projectParams!.opportunity!.filter((p) => p !== value);
     handleParamsChange({ ...projectParams, opportunity });
   };
 
@@ -80,7 +80,8 @@ export default function useProjects() {
   };
 
   const handleRemoveLevel = (value: string) => {
-    const level = projectParams.level.filter((p) => p !== SkillLevel[value]);
+    // @ts-ignore
+    const level = projectParams!.level!.filter((p) => p !== SkillLevel[value]);
     handleParamsChange({ ...projectParams, level });
   };
 
@@ -137,7 +138,7 @@ function FilterBySearchTerm(project: ProjectLite, params: ProjectParams) {
       project.title.toLowerCase().includes(params.searchTerm.toLowerCase()) ||
       project.opportunities.some((o) =>
         o.skills.some((s) =>
-          s.interest.toLowerCase().includes(params.searchTerm.toLowerCase())
+          s!.interest!.toLowerCase()!.includes(params!.searchTerm!.toLowerCase())
         )
       )
     );
@@ -157,22 +158,22 @@ function FilterProjectOpportunities(
 
   return project.opportunities.some(
     (op) =>
-      (!filterByLevel || params.level.includes(op.level)) &&
-      (!filterByOpportunity || params.opportunity.includes(op.title)) &&
-      (!filterByCommitment || op.commitmentHoursPerWeek <= params.maxCommit)
+      (!filterByLevel || params!.level!.includes(op!.level)) &&
+      (!filterByOpportunity || params!.opportunity!.includes(op!.title)) &&
+      (!filterByCommitment || op!.commitmentHoursPerWeek <= params!.maxCommit)
   );
 }
 
 function FilterByLevel(project: ProjectLite, params: ProjectParams) {
   if (params.level && params.level.length > 0) {
-    return project.opportunities.some((op) => params.level.includes(op.level));
+    return project.opportunities.some((op) => params!.level!.includes(op!.level));
   }
   return true;
 }
 function FilterByOpportunities(project: ProjectLite, params: ProjectParams) {
   if (params.opportunity && params.opportunity.length > 0) {
     return project.opportunities.some((op) =>
-      params.opportunity.includes(op.title)
+      params!.opportunity!.includes(op!.title)
     );
   }
   return true;

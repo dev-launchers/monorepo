@@ -1,7 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
-import { Project } from "../../models/project";
-import ProjectDetails from "@components/modules/DetailedPage";
+import { Project } from "@devlaunchers/models/project";
+import ProjectDetails from "../../components/modules/DetailedPage";
 import { Opportunity } from "@devlaunchers/models/opportunity";
 
 export const getProjectsSlugs = async () => {

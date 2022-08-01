@@ -1,4 +1,4 @@
-import BoxContainer from "@components/common/BoxContainer";
+import BoxContainer from "../../common/BoxContainer";
 import { Opportunity } from "@devlaunchers/models/opportunity";
 import Link from "next/link";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { ProjectLite } from '../../../../../models/project';
+import { ProjectLite } from '@devlaunchers/models/project';
 import {
   ItemContainer,
   Section,

@@ -6,8 +6,8 @@ export const Form = styled.form`
 `;
 export const Label = styled.label`
   margin: 1rem;
-  color: ${({ theme }) => theme.colors.White};
-  font-family: ${({ theme }) => theme.fonts.normal};
+  color: ${({ theme }) => theme?.colors?.White};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-size: ${({ theme }) => theme.fontSizes.small};
 `;
 export const Input = styled.input<{ height?: string; width?: string }>`
@@ -63,7 +63,7 @@ export const Column = styled.div`
 export const RadioWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.BlackCoral};
+  background-color: ${({ theme }) => theme?.colors?.BlackCoral};
 `;
 
 export const CheckboxLabel = styled.label`
@@ -84,15 +84,15 @@ export const Slider = styled.input.attrs({ type: "range" })`
 
 export const FileUpload = styled.input.attrs({ type: "file" })`
   margin-top: 1.25rem;
-  color: ${({ theme }) => theme.colors.OuterSpace};
+  color: ${({ theme }) => theme?.colors?.OuterSpace};
   background-color: ${({ theme }) => theme.colors.SilverSand};
   border-radius: 30px;
   width: 40%;
 `;
 
 export const Statement = styled.p`
-  color: ${({ theme }) => theme.colors.White};
-  font-family: ${({ theme }) => theme.fonts.normal};
+  color: ${({ theme }) => theme?.colors?.White};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-size: 0.9rem;
   width: 50%;
   text-align: left;
@@ -102,24 +102,24 @@ export const Statement = styled.p`
 `;
 export const ErrorMsg = styled.div`
   color: ${({ theme }) => theme.colors.SilverSand};
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-size: ${({ theme }) => theme.fontSizes.small};
   margin-left: 1rem;
 `;
 
 export const SubmitButton = styled.button.attrs({ type: "submit" })`
-  background-color: ${({ theme }) => theme.colors.White};
+  background-color: ${({ theme }) => theme?.colors?.White};
   border-radius: 30px;
   padding: 0.5rem;
   width: 15%;
-  color: ${({ theme }) => theme.colors.Black};
+  color: ${({ theme }) => theme?.colors?.Black};
   cursor: pointer;
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
 export const Header = styled.h1`
-  color: ${({ theme }) => theme.colors.White};
+  color: ${({ theme }) => theme?.colors?.White};
   line-height: 3.5rem;
   border-bottom: none;
   font-family: ${({ theme }) => theme.fonts.headline};
@@ -131,7 +131,7 @@ export const Header = styled.h1`
 
 export const Tooltip = styled.p`
   color: ${({ theme }) => theme.colors.SilverSand};
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-size: 1rem;
   width: 50%;
   text-align: left;

@@ -6,13 +6,13 @@ export const Tags = styled.div`
   font-weight: 400;
   line-height: 21px;
   padding: 6px;
-  border: 1px solid ${({ theme }) => theme.colors.LightGrayT90};
+  border: 1px solid ${({ theme }) => theme?.colors?.LightGrayT90};
   border-radius: 20px;
 `;
 
 export const ColumnTitle = styled.div`
   font-family: ${({ theme }) => theme.fonts.headline};
-  color: ${({ theme }) => theme.colors.AntiFlashWhite};
+  color: ${({ theme }) => theme?.colors?.AntiFlashWhite};
   font-size: 3rem;
   font-weight: 400;
   padding: 0.375rem;
@@ -20,12 +20,12 @@ export const ColumnTitle = styled.div`
 
 export const HeaderBlock = styled.div`
   min-height: 7.5vh;
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
 `;
 
 export const Column = styled.div<{ bgColor?: string; w?: string; fa?: string }>`
   background-color: ${({ bgColor, theme }) =>
-    bgColor ? bgColor : theme.colors.Crayola};
+    bgColor ? bgColor : theme?.colors?.Crayola};
   flex-basis: ${({ w }) => (w ? w : "50%")};
   align-items: ${({ fa }) => (fa ? fa : "flex-start")};
   display: flex;
@@ -47,7 +47,7 @@ export const Row = styled.div`
 `;
 
 export const Type = styled.div`
-  color: ${({ theme }) => theme.colors.LightGray};
+  color: ${({ theme }) => theme?.colors?.LightGray};
   font-size: 1.5rem;
   font-weight: 400;
   font-style: italic;
@@ -57,7 +57,7 @@ export const Type = styled.div`
 `;
 
 export const Vision = styled.div`
-  color: ${({ theme }) => theme.colors.LightGray};
+  color: ${({ theme }) => theme?.colors?.LightGray};
   font-size: 1.5rem;
   font-weight: 500;
   margin-left: 1rem;

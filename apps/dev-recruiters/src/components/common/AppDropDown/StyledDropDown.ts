@@ -22,8 +22,8 @@ export const Icon = styled.svg`
 export const Toggle = styled.button`
   display: inline-flex;
   box-sizing: border-box;
-  background: ${({ theme }) => theme.colors.AntiFlashWhite};
-  color: ${({ theme }) => theme.colors.Black};
+  background: ${({ theme }) => theme?.colors?.AntiFlashWhite};
+  color: ${({ theme }) => theme?.colors?.Black};
   border-radius: 2.9rem;
   padding: 8px 10px;
   justify-content: space-between;
@@ -38,7 +38,7 @@ export const Toggle = styled.button`
 `;
 
 export const Title = styled.p`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   padding: 0;
   margin: 0;
   font-size: 15.1847px;
@@ -46,7 +46,7 @@ export const Title = styled.p`
 
 export const ContentContainer = styled.div<DropdownProps>`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: ${({ theme }) => theme.colors.BlackCoral};
+  background-color: ${({ theme }) => theme?.colors?.BlackCoral};
   position: absolute;
   z-index: 5;
   padding: 5px;

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import LoginPage from "@components/modules/LoginPage/loginPage";
-import BoxContainer from "@components/common/BoxContainer";
+import LoginPage from "../components/modules/LoginPage/loginPage";
+import BoxContainer from "../components/common/BoxContainer";
 function login() {
   return (
     <>

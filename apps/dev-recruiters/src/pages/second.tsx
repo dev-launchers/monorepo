@@ -1,7 +1,7 @@
 import Head from "next/head";
-import ProductHeader from "@components/modules/DetailedPage/ProductHeader";
-import SignUpForm from "@components/modules/FormPage/signUpForm";
-import BoxContainer from "@components/common/BoxContainer";
+import ProductHeader from "../components/modules/DetailedPage/ProductHeader";
+import SignUpForm from "../components/modules/FormPage/signUpForm";
+import BoxContainer from "../components/common/BoxContainer";
 const SecondPage = () => (
   <>
     <Head>

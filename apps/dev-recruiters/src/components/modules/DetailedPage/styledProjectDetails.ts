@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.OuterSpace};
+  background-color: ${({ theme }) => theme?.colors?.OuterSpace};
   padding: 1rem;
 `;
 export const Container = styled.div`
@@ -14,7 +14,7 @@ export const Container = styled.div`
     margin-top: 0;
     background-color: ${({ theme }) => theme.colors.CoolGrey};
     border-radius: 30px;
-    font-family: ${({ theme }) => theme.fonts.normal};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
     font-style: normal;
     font-weight: 600;
     font-size: 19.5px;
@@ -48,7 +48,7 @@ export const Card = styled.div`
   position: relative;
   height: max-content;
   min-height: 234px;
-  background-color: ${({ theme }) => theme.colors.White};
+  background-color: ${({ theme }) => theme?.colors?.White};
   border-radius: 30px;
   flex: 1 1 600px;
   & > h2 {
@@ -56,7 +56,7 @@ export const Card = styled.div`
     margin-top: 0;
     background-color: ${({ theme }) => theme.colors.CoolGrey};
     border-radius: 30px;
-    font-family: ${({ theme }) => theme.fonts.normal};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -71,7 +71,7 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   box-sizing: border-box;
   padding: 0 36px;
   padding-bottom: 12px;
@@ -89,7 +89,7 @@ export const CardContent = styled.div`
 
 export const CardButton = styled.button`
   flex: 0 1 auto;
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   box-sizing: border-box;
   padding: 12px 15px;
   font-style: normal;
@@ -97,8 +97,8 @@ export const CardButton = styled.button`
   font-size: 15px;
   line-height: 11px;
   border: none;
-  background: ${({ theme }) => theme.colors.DarkElectricBlue};
-  color: ${({ theme }) => theme.colors.White};
+  background: ${({ theme }) => theme?.colors?.DarkElectricBlue};
+  color: ${({ theme }) => theme?.colors?.White};
   border-radius: 30px;
   margin-top: auto;
   margin-left: auto;
@@ -106,7 +106,7 @@ export const CardButton = styled.button`
 `;
 
 export const BackButton = styled.a`
-font-family: ${({ theme }) => theme.fonts.normal};
+font-family: ${({ theme }) => theme?.fonts?.normal};
 font-size: 1rem;
 padding: 5px 12px;
 display: inline-flex;
@@ -115,11 +115,11 @@ border:none;
 background: ${({ theme }) => theme.colors.CoolGrey};
 box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
-color: ${({ theme }) => theme.colors.White};
+color: ${({ theme }) => theme?.colors?.White};
 
 &:hover{
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.White};
+  color: ${({ theme }) => theme?.colors?.White};
 }
 
 & svg{

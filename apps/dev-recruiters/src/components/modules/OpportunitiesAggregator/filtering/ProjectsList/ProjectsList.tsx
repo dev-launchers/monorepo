@@ -1,10 +1,10 @@
 import NoProjects from "../NoProjects";
-import { ProjectLite } from "../../../../../models/project";
+import { ProjectLite } from "@devlaunchers/models/project";
 import ProjectListItem from "../ProjectsListItem";
 import { List } from "./StyledProjectsList";
 
 interface Props {
-  projects: ProjectLite[];
+  projects?: ProjectLite[];
   projectsLoaded: boolean;
 }
 

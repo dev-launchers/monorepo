@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 
 export const FilterMenu = styled.div<{ visible: boolean }>`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   position: fixed;
   top: 0;
   left: 0;
   transform: translateX(${(props) => (props.visible ? '0' : '-100%')});
   width: 100%;
   height: 100%;
-  color: ${({ theme }) => theme.colors.White};
-  background: ${({ theme }) => theme.colors.Black};
+  color: ${({ theme }) => theme?.colors?.White};
+  background: ${({ theme }) => theme?.colors?.Black};
   z-index: 10;
   transition: all 300ms ease-in-out;
   overflow-y: auto;
@@ -48,10 +48,10 @@ export const Header = styled.div`
 `;
 
 export const ResetButton = styled.button`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-size: 16px;
   background: transparent;
-  color: ${({ theme }) => theme.colors.LightGray};
+  color: ${({ theme }) => theme?.colors?.LightGray};
   border: none;
 `;
 
@@ -64,7 +64,7 @@ export const CloseButton = styled.button`
 `;
 
 export const CloseIcon = styled.svg`
-  color: ${({ theme }) => theme.colors.White};
+  color: ${({ theme }) => theme?.colors?.White};
   height: 100%;
   width: 100%;
 `;
@@ -75,7 +75,7 @@ export const Section = styled.div`
 `;
 
 export const SectionTitle = styled.p`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-style: normal;
   font-weight: 700;
   font-size: 21.2644px;
@@ -89,14 +89,14 @@ export const SectionTitle = styled.p`
 
 export const FilterButton = styled.button`
   width: 90%;
-  background: ${({ theme }) => theme.colors.White};
+  background: ${({ theme }) => theme?.colors?.White};
   border: none;
   border-radius: 10px;
   padding: 10px;
   margin: 10px auto;
   margin-top: auto;
 
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-style: normal;
   font-weight: 700;
   font-size: 21.2644px;

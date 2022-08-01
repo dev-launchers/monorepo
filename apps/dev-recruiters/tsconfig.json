@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "./components/*"
       ],
       "@images/*": [
-        "src/images/*"
+        "./images/*"
       ],
       "@styles/*": [
-        "src/styles/*"
+        "./styles/*"
       ],
       "@utils/*": [
-        "src/utils/*"
+        "./utils/*"
       ],
       "@contexts/*": [
-        "src/contexts/*"
+        "./contexts/*"
       ],
       "@models/*": [
-        "src/models/*"
+        "./models/*"
       ]
     },
     "target": "es5",
@@ -44,7 +44,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, ],
+, "src/components/common/Header/index.js", ],
   "exclude": [
     "node_modules"
   ]

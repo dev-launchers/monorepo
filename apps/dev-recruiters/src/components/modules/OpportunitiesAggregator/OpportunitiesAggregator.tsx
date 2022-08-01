@@ -5,24 +5,24 @@ import {
   FeaturedProducts,
   CardsContainer,
   HeadingContainer,
-} from "@components/modules/OpportunitiesAggregator/StyledOpportunitiesAggregator";
+} from "../../modules/OpportunitiesAggregator/StyledOpportunitiesAggregator";
 
 import * as React from "react";
 import ShortCard from "./ShortCard";
 import FilteringComponent, {
   FilteringComponentProps,
 } from "./filtering/FilteringComponent";
-import BoxContainer from "@components/common/BoxContainer";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import BoxContainer from "../../common/BoxContainer";
 import Slider from "react-slick";
+import { useTheme } from "styled-components";
 interface Props extends FilteringComponentProps {}
 
 const OpportunitiesAggregator: React.FunctionComponent<Props> = ({
   projects,
   opportunities,
 }) => {
-  const customSlider = React.useRef();
+  const theme = useTheme()
+  const customSlider = React.useRef<Slider | null>(null);
   const settings = {
     className: "cards",
     dots: true,
@@ -61,7 +61,7 @@ const OpportunitiesAggregator: React.FunctionComponent<Props> = ({
             <h2>Featured Products</h2>
           </FeaturedProducts>
           <Slider
-            ref={(slider) => (customSlider.current = slider)}
+            ref={(slider) => customSlider.current = slider}
             {...settings}
           >
             {projects.map((project) => (

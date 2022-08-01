@@ -25,7 +25,7 @@ export const NoResultContent = styled.div`
 `;
 
 export const NoResultTextBig = styled.p`
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   font-weight: 700;
   font-size: 3rem;
   line-height: 3.5rem;
@@ -35,7 +35,7 @@ export const NoResultTextBig = styled.p`
 `;
 
 export const NoResultTextSmall = styled.p`
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   line-height: 1.7rem;

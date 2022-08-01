@@ -1,4 +1,5 @@
 import { Project } from "@devlaunchers/models/project";
+import { Theme } from "../../../../styles/theme";
 import Link from "next/link";
 import { Id } from "react-toastify";
 import { useTheme } from "styled-components";
@@ -36,7 +37,7 @@ const ShortCard = ({
   | "catchPhrase"
   | "slug"
 >) => {
-  const theme = useTheme();
+  const theme = useTheme() as Theme;
   const opp =
     opportunities.length > 3 ? opportunities.slice(-3) : opportunities;
   return (
@@ -44,7 +45,7 @@ const ShortCard = ({
       <Container key={id}>
         <CardHeader>
           <Title>{title}</Title>
-          <Content style={{ color: theme.colors.LightGray, fontSize: "1rem" }}>
+          <Content style={{ color: theme?.colors?.LightGray, fontSize: "1rem" }}>
             {isPlatform ? "Platform" : "Independent"} Product
           </Content>
           <Description>{catchPhrase}</Description>

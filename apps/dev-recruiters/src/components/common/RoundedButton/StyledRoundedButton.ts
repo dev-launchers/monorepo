@@ -13,7 +13,7 @@ export interface RoundedButtonProps {
 export const AppRoundedButton = styled.button<RoundedButtonProps>`
   justify-self: center;
   width: auto;
-  font-family: ${({ theme }) => theme.fonts.normal}, sans-serif;
+  font-family: ${({ theme }) => theme?.fonts?.normal}, sans-serif;
   font-size: ${(props) =>
             props.fontSize ? `${props.fontSize}rem` : "1.12rem"};
   background: ${(props) => props.bgColor ?? "rgba(84, 87, 91, 0.2)"};

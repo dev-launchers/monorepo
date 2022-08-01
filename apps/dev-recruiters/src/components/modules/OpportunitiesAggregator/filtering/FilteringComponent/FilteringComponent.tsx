@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Project } from '@devlaunchers/models/project';
+import { Project, ProjectLite } from '@devlaunchers/models/project';
 import { ProjectType } from '../projectEnums';
 import ProjectsList from '../ProjectsList';
 import useProjects from '../useProject';
 import { EnumToArray } from '@devlaunchers/utility/enumToArray';
-import CheckboxDropdown from '@components/common/CheckboxDropdown';
+import CheckboxDropdown from '../../../../common/CheckboxDropdown';
 import {
   Wrapper,
   FiltersWrapper,
@@ -20,7 +20,7 @@ import {
 import { Opportunity } from '@devlaunchers/models/opportunity';
 import { SkillLevel } from '@devlaunchers/models/level';
 import SearchComponent from '../SearchComponent';
-import Slider from '@components/common/Slider';
+import Slider from '../../../../common/Slider';
 import FiltersMenu from './FiltersMenu';
 import styled from 'styled-components';
 
@@ -109,7 +109,7 @@ export default function FilteringComponent({
                       keyProperty={'title'}
                       items={opportunities}
                       onChange={handleOpportunityChange}
-                      selectedItems={projectParams.opportunity}
+                      selectedItems={projectParams?.opportunity as string[]}
                     />
                   </div>
                 )}
@@ -119,7 +119,7 @@ export default function FilteringComponent({
                     keyProperty={'name'}
                     items={EnumToArray(SkillLevel)}
                     onChange={handleLevelChange}
-                    selectedItems={projectParams.level}
+                    selectedItems={projectParams.level as SkillLevel[]}
                   />
                 </div>
               </DropDownContainer>
@@ -171,7 +171,7 @@ export default function FilteringComponent({
           <Section>
             <SectionTitle>Search</SectionTitle>
             <SearchComponent
-              value={projectParams.searchTerm}
+              value={projectParams.searchTerm as string}
               onChange={handleSearchTermChange}
             />
           </Section>
@@ -229,7 +229,7 @@ export default function FilteringComponent({
 
       {projectsLoaded && (
         <ProjectsList
-          projects={filteredProjects}
+          projects={filteredProjects as ProjectLite[]}
           projectsLoaded={projectsLoaded}
         />
       )}

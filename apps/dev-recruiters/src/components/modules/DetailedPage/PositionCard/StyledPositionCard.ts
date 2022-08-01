@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
  
-  background: ${(props) => props.theme.colors.White};
+  background: ${(props) => props.theme?.colors?.White};
   border-radius: 1.8rem;
   overflow: hidden;
 
@@ -29,13 +29,13 @@ justify-content: flex-start; */
   padding: 1rem;
   background-color: ${(props) =>
     props.color === 'Dark'
-      ? props.theme.colors.Crayola
-      : props.theme.colors.White};
+      ? props.theme?.colors?.Crayola
+      : props.theme?.colors?.White};
 
   color: ${(props) =>
     props.color === 'Light'
-      ? props.theme.colors.OuterSpace
-      : props.theme.colors.White};
+      ? props.theme?.colors?.OuterSpace
+      : props.theme?.colors?.White};
 
   @media (max-width: 760px) {
     display: ${({ Mobile, Expanded }) =>
@@ -65,7 +65,7 @@ export const TitleSection = styled.div`
   min-width: 10rem;
 
   & h2 {
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-weight: 400;
     font-size: 23.1734px;
     font-style: normal;
@@ -86,7 +86,7 @@ export const DescriptionSection = styled.div<{
   height: 100%;
   
   & h3 {
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -96,7 +96,7 @@ export const DescriptionSection = styled.div<{
 
   & p {
     height: ${(props) => (props.Expanded ? 'auto' : 'auto')};
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-style: normal;
     font-size: 14px;
     line-height: 19px;
@@ -113,7 +113,7 @@ export const DescriptionSection = styled.div<{
     & p {
       padding: 0 1rem;
       height: ${(props) => (props.Expanded ? 'auto' : 'auto')};
-      font-family: ${(props) => props.theme.fonts.normal};
+      font-family: ${(props) => props.theme?.fonts?.normal};
       font-style: normal;
       font-weight: 400;
       font-size: 1rem;
@@ -126,7 +126,7 @@ export const OpportunityDetailsContainer = styled.div`
   width: 100%;
   
   margin: 0 auto;
-  font-family: ${(props) => props.theme.fonts.normal};
+  font-family: ${(props) => props.theme?.fonts?.normal};
   font-size: 1rem;
 
   & h4 {
@@ -166,19 +166,19 @@ export const TagsListItem = styled.li<{ color: sectionTheme }>`
  
   background-color: ${(props) =>
     props.color === 'Dark'
-      ? props.theme.colors.OuterSpace
-      : props.theme.colors.White};
+      ? props.theme?.colors?.OuterSpace
+      : props.theme?.colors?.White};
 
   color: ${(props) =>
     props.color === 'Light'
-      ? props.theme.colors.OuterSpace
+      ? props.theme?.colors?.OuterSpace
       : props.theme.colors.Argent};
-  border: ${({ theme }) => `0.723357px solid ${theme.colors.OuterSpace}`};
+  border: ${({ theme }) => `0.723357px solid ${theme?.colors?.OuterSpace}`};
   filter: ${({ theme }) =>
-    `drop-shadow(0px 0.18rem 0.18rem ${theme.colors.BlackT38})`};
+    `drop-shadow(0px 0.18rem 0.18rem ${theme?.colors?.BlackT38})`};
 
   border-radius: 1.8125rem;
-  font-family: ${(props) => props.theme.fonts.normal};
+  font-family: ${(props) => props.theme?.fonts?.normal};
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
@@ -200,7 +200,7 @@ export const CommitmentSection = styled.div`
     line-height: 22px;
   }
   & p {
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -221,7 +221,7 @@ export const ExpectationsSection = styled.div<{ Expanded: boolean }>`
 
   padding: 0 1rem;
   & h4 {
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -246,7 +246,7 @@ export const ExpectationsList = styled.ul`
 `;
 export const ExpectationsListItem = styled.li`
 padding: 5px ;
-  font-family: ${(props) => props.theme.fonts.normal};
+  font-family: ${(props) => props.theme?.fonts?.normal};
   font-style: normal;
   font-weight: 400;
   //font-size: 13.0204px;
@@ -276,12 +276,12 @@ export const ButtonsSection = styled.div<{
 `;
 
 export const Button = styled.button<{ color?: string }>`
-  font-family: ${(props) => props.theme.fonts.normal};
+  font-family: ${(props) => props.theme?.fonts?.normal};
   background-color: ${(props) =>
     props.color
       ? props.theme.colors[props.color]
-      : props.theme.colors.OuterSpace};
-  color: ${(props) => props.theme.colors.White};
+      : props.theme?.colors?.OuterSpace};
+  color: ${(props) => props.theme?.colors?.White};
   border-radius: 1.8rem;
   padding: 10px 20px;
   white-space: nowrap;
@@ -297,7 +297,7 @@ export const Button = styled.button<{ color?: string }>`
 export const PositionDetailsMobile = styled.div`
   padding: 0 1rem;
   & p {
-    font-family: ${(props) => props.theme.fonts.normal};
+    font-family: ${(props) => props.theme?.fonts?.normal};
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
@@ -324,19 +324,19 @@ export const LikeButton = styled.button`
 
 export const Icon = styled.svg<{ Active: boolean }>`
   color: ${(props) =>
-    props.Active ? props.theme.colors.White : props.theme.colors.Crayola};
-  stroke: ${(props) => props.theme.colors.White};
+    props.Active ? props.theme?.colors?.White : props.theme?.colors?.Crayola};
+  stroke: ${(props) => props.theme?.colors?.White};
   height: 2rem;
   width: 2rem;
 `;
 
 export const ApplyButton = styled.a<{ color?: string }>`
-  font-family: ${(props) => props.theme.fonts.normal};
+  font-family: ${(props) => props.theme?.fonts?.normal};
   background-color: ${(props) =>
     props.color
       ? props.theme.colors[props.color]
-      : props.theme.colors.OuterSpace};
-  color: ${(props) => props.theme.colors.White};
+      : props.theme?.colors?.OuterSpace};
+  color: ${(props) => props.theme?.colors?.White};
   border-radius: 1.8rem;
   padding: 10px 20px;
   white-space: nowrap;

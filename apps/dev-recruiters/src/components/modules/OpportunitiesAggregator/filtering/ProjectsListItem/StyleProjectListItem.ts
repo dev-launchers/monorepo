@@ -4,8 +4,8 @@ export const ItemContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: auto;
-  font-family: ${({ theme }) => theme.fonts.normal};
-  background: ${({ theme }) => theme.colors.White};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
+  background: ${({ theme }) => theme?.colors?.White};
   display: flex;
   flex-direction: row;
   border-radius: 1.875rem;
@@ -54,8 +54,8 @@ export const InfoSection = styled.div`
     margin-bottom: 11px;
   }
   & h3 {
-    font-family: ${({ theme }) => theme.fonts.normal};
-    color: ${({ theme }) => theme.colors.LightGray};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
+    color: ${({ theme }) => theme?.colors?.LightGray};
     font-weight: 400;
     font-size: 16px;
     font-style: italic;
@@ -64,7 +64,7 @@ export const InfoSection = styled.div`
   }
   & p {
     margin-left: 13px;
-    font-family: ${({ theme }) => theme.fonts.normal};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
     font-weight: 400;
     font-size: 16px;
     max-width: 24rem;
@@ -100,7 +100,7 @@ export const DetailsWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   font-weight: 700;
   font-size: 16px;
 `;
@@ -112,7 +112,7 @@ export const PositionsContainer = styled.div`
   }
 
   & li {
-    font-family: ${({ theme }) => theme.fonts.normal};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
     display: list-item;
     font-size: 15px;
   }
@@ -133,7 +133,7 @@ export const CommitmentContainer = styled.div`
   & p {
     padding: 0;
     margin: 0;
-    font-family: ${({ theme }) => theme.fonts.normal};
+    font-family: ${({ theme }) => theme?.fonts?.normal};
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -155,9 +155,9 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const PositionsButton = styled.button`
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   border: none;
-  color: ${({ theme }) => theme.colors.White};
+  color: ${({ theme }) => theme?.colors?.White};
   background: ${({ theme }) => theme.colors.Gray};
   border-radius: 30px;
   font-weight: 400;
@@ -170,10 +170,10 @@ export const PositionsButton = styled.button`
 `;
 export const DetailsButton = styled.a`
   box-sizing: border-box;
-  font-family: ${({ theme }) => theme.fonts.normal};
+  font-family: ${({ theme }) => theme?.fonts?.normal};
   border: none;
-  color: ${({ theme }) => theme.colors.White};
-  background: ${({ theme }) => theme.colors.DarkElectricBlue};
+  color: ${({ theme }) => theme?.colors?.White};
+  background: ${({ theme }) => theme?.colors?.DarkElectricBlue};
   border-radius: 30px;
   font-weight: 400;
   font-size: 14px;
@@ -183,7 +183,7 @@ export const DetailsButton = styled.a`
 
   &:hover {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.White};
+    color: ${({ theme }) => theme?.colors?.White};
   }
 
   @media (max-width: 760px) {

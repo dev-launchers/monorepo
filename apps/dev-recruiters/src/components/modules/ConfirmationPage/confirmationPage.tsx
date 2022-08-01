@@ -8,9 +8,11 @@ import {
 } from "./styledConfirmationPage";
 
 import Link from "next/link";
+import { useTheme } from "styled-components";
 export default function ConfirmationPage() {
+  
   return (
-    <Wrapper>
+    <Wrapper theme={useTheme()}>
       <Header>Apply with Dev Launchers!</Header>
       <MessageWrapper>
         <Message>Thank you for applying to Dev Launchers!</Message>
