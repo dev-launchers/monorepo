@@ -111,6 +111,9 @@ COPY --from=builder /app/apps/ideas/next.config.js \
 COPY --from=builder /app/apps/site-projects/next.config.js \
                     /app/apps/site-projects/package.json \
                     ./apps/site-projects/
+COPY --from=builder /app/apps/dev-recruiters/next.config.js \
+                    /app/apps/dev-recruiters/package.json \
+                    ./apps/dev-recruiters/
 COPY --from=builder /app/apps/platform__website/public ./apps/platform__website/public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/platform__website/.next ./apps/platform__website/.next
 COPY --from=builder /app/node_modules ./node_modules
