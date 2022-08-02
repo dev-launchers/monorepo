@@ -2384,9 +2384,9 @@ __metadata:
     npm-run-all: 4.1.5
     polished: ^4.1.1
     prettier: ^2.5.1
-    react: ^17.0.1
+    react: ^18.2.0
     react-burger-menu: ^3.0.6
-    react-dom: ^17.0.1
+    react-dom: ^18.2.0
     rimraf: 3.0.2
     shell-quote: 1.7.2
     storybook-addon-next-router: ^3.1.1
@@ -20667,7 +20667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17.0.1, react-dom@npm:^17.0.2":
+"react-dom@npm:^17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -20986,7 +20986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.1, react@npm:^17.0.2":
+"react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
