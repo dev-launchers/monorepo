@@ -15,9 +15,6 @@ module.exports = {
     // return the customized config
     return mergeConfig(config, {
       // customize the Vite config here
-      resolve: {
-        alias: { foo: "bar" },
-      },
     });
   },
   // ... other options here
