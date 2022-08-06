@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "http://devlaunchers.com/",
+  "homepage": "http://devlaunchers.org/",
   "dependencies": {
     "@cloudflare/wrangler": "^1.19.12",
     "@devlaunchers/dev-recruiters": "workspace:^",
@@ -43,6 +43,7 @@
     "wrangler": "^2.0.24"
   },
   "devDependencies": {
+    "@devlaunchers/eslint-config-bases": "workspace:^",
     "@types/luxon": "3.0.0",
     "@types/react": "18.0.15",
     "babel-plugin-styled-components": "^2.0.7",
@@ -64,12 +65,12 @@
     "pre-commit": "eslint '*/**/*.{js,jsx}' --fix",
     "prepare": "husky install",
     "clean": "rimraf --no-glob ./tsconfig.tsbuildinfo",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx",
+    "fix-all-files": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx --fix",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "test": "run-s 'test:*'",
     "test:unit": "echo \"No tests yet\"",
-    "fix:staged-files": "lint-staged --allow-empty",
-    "fix:all-files": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+    "fix:staged-files": "lint-staged --allow-empty"
   },
   "browserslist": [
     ">0.2%",

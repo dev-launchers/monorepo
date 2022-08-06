@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
+    "@devlaunchers/eslint-config-bases": "workspace:^",
     "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.15",
     "@types/react-burger-menu": "^2.8.3",
@@ -61,7 +62,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx",
+    "fix-all-files": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx --fix",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
