@@ -1,7 +1,5 @@
 // use `mergeConfig` to recursively merge Vite options
-const { mergeConfig } = require("vite");
 module.exports = {
-  core: { builder: "@storybook/builder-vite" },
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../public"],
   addons: [
@@ -10,12 +8,4 @@ module.exports = {
     "storybook-addon-next-router",
   ],
   framework: "@storybook/react",
-
-  async viteFinal(config, { configType }) {
-    // return the customized config
-    return mergeConfig(config, {
-      // customize the Vite config here
-    });
-  },
-  // ... other options here
 };
