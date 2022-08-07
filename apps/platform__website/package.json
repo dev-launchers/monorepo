@@ -33,7 +33,7 @@
     "react-modal": "^3.15.1",
     "react-share": "latest",
     "react-social-icons": "latest",
-    "react-tabs": "^5.1.0",
+    "react-tabs": "^3.1.0",
     "react-toastify": "latest",
     "regenerator-runtime": "^0.13.9",
     "semantic-release": "^19.0.3",
