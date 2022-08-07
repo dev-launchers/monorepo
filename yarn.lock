@@ -20387,14 +20387,14 @@ __metadata:
   linkType: hard
 
 "object.assign@npm:^4.1.0, object.assign@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "object.assign@npm:4.1.2"
+  version: 4.1.3
+  resolution: "object.assign@npm:4.1.3"
   dependencies:
-    call-bind: ^1.0.0
-    define-properties: ^1.1.3
-    has-symbols: ^1.0.1
+    call-bind: ^1.0.2
+    define-properties: ^1.1.4
+    has-symbols: ^1.0.3
     object-keys: ^1.1.1
-  checksum: d621d832ed7b16ac74027adb87196804a500d80d9aca536fccb7ba48d33a7e9306a75f94c1d29cbfa324bc091bfc530bc24789568efdaee6a47fcfa298993814
+  checksum: fe87c8acd60e0d7140e1eae8886804e7497bf6a019bae715084083c2abd1760bd5aa9c3f0e5b02c82ca5cc33b641dc908c42c86c6f7d6dfd9f083a7baa95d318
   languageName: node
   linkType: hard
 
@@ -22204,7 +22204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.14, postcss@npm:^8.2.15, postcss@npm:^8.3.5, postcss@npm:^8.4.14, postcss@npm:^8.4.4, postcss@npm:^8.4.7":
+"postcss@npm:8.4.14":
   version: 8.4.14
   resolution: "postcss@npm:8.4.14"
   dependencies:
@@ -22222,6 +22222,17 @@ __metadata:
     picocolors: ^0.2.1
     source-map: ^0.6.1
   checksum: 4ac793f506c23259189064bdc921260d869a115a82b5e713973c5af8e94fbb5721a5cc3e1e26840500d7e1f1fa42a209747c5b1a151918a9bc11f0d7ed9048e3
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.2.15, postcss@npm:^8.3.5, postcss@npm:^8.4.14, postcss@npm:^8.4.4, postcss@npm:^8.4.7":
+  version: 8.4.16
+  resolution: "postcss@npm:8.4.16"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 10eee25efd77868036403858577da0cefaf2e0905feeaba5770d5438ccdddba3d01cba8063e96b8aac4c6daa0ed413dd5ae0554a433a3c4db38df1d134cffc1f
   languageName: node
   linkType: hard
 
@@ -23263,14 +23274,14 @@ __metadata:
   linkType: hard
 
 "react-toastify@npm:^9.0.7, react-toastify@npm:latest":
-  version: 9.0.7
-  resolution: "react-toastify@npm:9.0.7"
+  version: 9.0.8
+  resolution: "react-toastify@npm:9.0.8"
   dependencies:
     clsx: ^1.1.1
   peerDependencies:
     react: ">=16"
     react-dom: ">=16"
-  checksum: c10753ec242c0f91247633504a6ffc8199a8d4eff5f7e28edd63521236bffda57317438e8e1abe3a25c4296860375fe51d96361480232f1c8d86ed1fcf77ce62
+  checksum: d48fa369b3d19c63f9b6b1ecef076911aa97a43bb84ecdb1532e6f32932e3625c1c3e12a4c63e7eb211d33b8aa962e9b9a81ab6a47fef2c51185ce8c9a780336
   languageName: node
   linkType: hard
 
