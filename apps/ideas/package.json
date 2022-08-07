@@ -7,17 +7,19 @@
     "build": "next build",
     "start": "next start",
     "clean": "rimraf --no-glob ./tsconfig.tsbuildinfo",
-    "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx",
+    "fix-all-files": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx --fix",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "test": "run-s 'test:*'",
     "test:unit": "echo \"No tests yet\"",
-    "fix:staged-files": "lint-staged --allow-empty",
-    "fix:all-files": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+    "fix:staged-files": "lint-staged --allow-empty"
   },
   "dependencies": {
+    "@devlaunchers/eslint-config-bases": "workspace:^",
     "@material-ui/core": "^4.12.4",
+    "eslint": "8.21.0",
     "next": "^12.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
