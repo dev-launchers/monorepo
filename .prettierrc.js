@@ -1,6 +1,8 @@
 // @ts-check
 
-const { getPrettierConfig } = require('@devlaunchers/eslint-config-bases/src/helpers');
+const {
+  getPrettierConfig,
+} = require('@devlaunchers/eslint-config-bases/helpers');
 
 const { overrides = [], ...prettierConfig } = getPrettierConfig();
 
@@ -11,6 +13,7 @@ const config = {
   ...prettierConfig,
   overrides: [
     ...overrides,
+    ...[
       {
         files: '*.md',
         options: {
@@ -18,6 +21,7 @@ const config = {
           quoteProps: 'preserve',
         },
       },
+    ],
   ],
 };
 
