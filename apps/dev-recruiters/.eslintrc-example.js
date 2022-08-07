@@ -11,11 +11,11 @@ module.exports = {
   },
   ignorePatterns: ["**/node_modules", "**/.cache", "build", ".next"],
   extends: [
-    "@devlaunchers/eslint-config-bases/typescript",
-    "@devlaunchers/eslint-config-bases/sonar",
-    "@devlaunchers/eslint-config-bases/regexp",
-    "@devlaunchers/eslint-config-bases/react",
-    "@devlaunchers/eslint-config-bases/rtl",
+    // "@devlaunchers/eslint-config-bases/typescript",
+    // "@devlaunchers/eslint-config-bases/sonar",
+    // "@devlaunchers/eslint-config-bases/regexp",
+    // "@devlaunchers/eslint-config-bases/react",
+    // "@devlaunchers/eslint-config-bases/rtl",
     
     
 
@@ -27,7 +27,7 @@ module.exports = {
 
     // Post configure the prettier base so there won't be
     // any conficts between eslint / prettier
-    "@devlaunchers/eslint-config-bases/prettier",
+    // "@devlaunchers/eslint-config-bases/prettier",
   ],
   rules: {
     // Specific global rules for your app or package

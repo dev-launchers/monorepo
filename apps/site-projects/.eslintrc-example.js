@@ -27,7 +27,7 @@ module.exports = {
 
     // Post configure the prettier base so there won't be
     // any conficts between eslint / prettier
-    "@devlaunchers/eslint-config-bases/prettier",
+    // "@devlaunchers/eslint-config-bases/prettier",
   ],
   rules: {
     // Specific global rules for your app or package

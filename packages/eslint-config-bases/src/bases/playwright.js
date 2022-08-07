@@ -13,7 +13,7 @@ module.exports = {
       // To ensure best performance enable only on e2e test files
       files: playwrightPatterns.files,
       // @see https://github.com/playwright-community/eslint-plugin-playwright
-      extends: ['plugin:playwright/recommended'],
+      extends: ['plugin:playwright/playwright-test'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
