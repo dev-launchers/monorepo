@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Button from "../Button";
+import styled from 'styled-components';
+import Button from '../Button';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -9,8 +9,8 @@ export const Toggle = styled(Button)`
   padding-left: 2rem;
   padding-right: 2rem;
 `;
-export const Rooms = styled.div`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+export const Rooms = styled.div<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   position: absolute;
   right: 50%;
   left: -50%;
