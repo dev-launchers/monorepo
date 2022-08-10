@@ -1,5 +1,3 @@
-// @ts-check
-
 const {
   getPrettierConfig,
 } = require('@devlaunchers/eslint-config-bases/helpers');
