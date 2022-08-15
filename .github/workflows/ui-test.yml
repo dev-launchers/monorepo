@@ -1,7 +1,7 @@
 name: Storybook Tests
 on:
   workflow_run:
-    workflows: [Chromatic]
+    workflows: [Build, Chromatic]
     types:
       - completed
 jobs:
