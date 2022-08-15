@@ -9,9 +9,7 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const WithShortText: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} style={{ color: 'black' }}>
-    Button
-  </Button>
+  <Button {...args}>Button</Button>
 );
 
 WithShortText.play = async ({ canvasElement }) => {
@@ -20,9 +18,7 @@ WithShortText.play = async ({ canvasElement }) => {
 };
 
 export const WithLongText: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} style={{ color: 'black' }}>
-    Welcome to Dev Launchers Platform
-  </Button>
+  <Button {...args}>Welcome to Dev Launchers Platform</Button>
 );
 
 export const Customizable: ComponentStory<typeof Button> = (args) => (
