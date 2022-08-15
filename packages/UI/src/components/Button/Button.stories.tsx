@@ -1,7 +1,7 @@
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import { within } from '@storybook/testing-library';
 import * as React from 'react';
 import Button from './Button';
-import { within, userEvent, waitFor } from '@storybook/testing-library';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
   title: 'Common Components/Button',
@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 export const WithShortText: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args} style={{ color: 'black' }}>
+    Button
+  </Button>
 );
 
 WithShortText.play = async ({ canvasElement }) => {
