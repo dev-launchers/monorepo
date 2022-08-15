@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: yarn
       - name: Run Storybook tests
-        workingDir: packages/UI
+        working-directory: packages/UI
         run: yarn test-storybook
         env:
           TARGET_URL: '${{ github.event.deployment_status.target_url }}'
