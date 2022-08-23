@@ -1,7 +1,7 @@
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { within, userEvent, waitFor } from '@storybook/testing-library';
 import * as React from 'react';
 import Button from './Button';
-import { within, userEvent, waitFor } from '@storybook/testing-library';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
   title: 'Common Components/Button',
