@@ -43,25 +43,28 @@ const Button = styled.a<ButtonProps>`
   font-family: ${({ theme }) => theme.fonts.normal};
   background-color: ${({ theme, bgColor }) => bgColor || theme.colors.ACCENT_5};
   color: ${({ theme, textColor }) => textColor || theme.colors.MAIN_1};
-  transition: background-color 0.5s, color 0.5s;
-  width: ${({ width }) => `${width}em` || ''};
+  width: ${({ width }) => `${width}em` || '4.4375rem'};
+  height: 1.5rem;
   border: 0px;
-  border-bottom: 3px solid;
+  text-align: center;
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: ${({ fontSize }) => `${fontSize}rem` || '1.5rem'};
+  font-size: ${({ fontSize }) => `${fontSize}rem` || '1rem'};
   margin-top: ${({ marginTop }) => `${marginTop}rem` || ''};
   padding: 8px 16px
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 400;
   &:hover {
     background-color: ${({ theme, bgColor }) =>
       onHoverBackgroundColor(bgColor || theme.colors.ACCENT_3)};
     color: ${({ theme, bgColor }) =>
       (bgColor && shadeColor(bgColor, -40)) || theme.colors.MAIN_1};
+      transition: background-color 0.5s, color 0.5s;
   }
   &:active{
     background-color: ${({ theme, bgColor }) =>
       bgColor || theme.colors.ACCENT_4};
   }
+
 `;
 export default Button;
