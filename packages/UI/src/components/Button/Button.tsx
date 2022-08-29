@@ -45,7 +45,6 @@ const Button = styled.a<ButtonProps>`
   color: ${({ theme, textColor }) => textColor || theme.colors.MAIN_1};
   width: ${({ width }) => `${width}em` || '4.4375rem'};
   height: 1.5rem;
-  border: 0px;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
