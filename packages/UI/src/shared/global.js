@@ -1,8 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 // import { color, typography } from './styles';
-
-
 
 const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -113,10 +111,10 @@ li {
 }
 
 @media (orientation: portrait) {
-  html {
+  /* html {
     /* Scale all font down */
     font-size: 75%;
-  }
+  } */
 
   h1 {
     font-size: 1.7rem;
