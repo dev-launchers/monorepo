@@ -8,26 +8,53 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const WithShortText: ComponentStory<typeof Button> = (args) => (
+export const Primary: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
+export const PrimaryLarge: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 );
 
-WithShortText.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  canvas.queryByText('Button');
+export const Secondary: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
+export const SecondaryLarge: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
+
+export const Alternative: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
+export const AlternativeLarge: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}>Button</Button>
+);
+
+Primary.args = {
+  buttonType: 'primary',
+  buttonSize: 'standard',
 };
 
-export const WithLongText: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Welcome to Dev Launchers Platform</Button>
-);
+PrimaryLarge.args = {
+  buttonType: 'primary',
+  buttonSize: 'xl',
+};
 
-export const Customizable: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>{args.text}</Button>
-);
+Secondary.args = {
+  buttonType: 'secondary',
+  buttonSize: 'standard',
+};
 
-Customizable.args = {
-  text: '',
-  bgColor: '',
-  textColor: '',
-  fontSize: 1.2,
+SecondaryLarge.args = {
+  buttonType: 'secondary',
+  buttonSize: 'xl',
+};
+
+Alternative.args = {
+  buttonType: 'alternate',
+  buttonSize: 'standard',
+};
+
+AlternativeLarge.args = {
+  buttonType: 'alternate',
+  buttonSize: 'xl',
 };
