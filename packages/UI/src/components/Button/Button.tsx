@@ -5,7 +5,7 @@ interface ButtonProps {
   buttonSize?: string;
 }
 
-const Button = styled.a.attrs(({ disabled }) => ({
+const Button = styled.button.attrs(({ disabled }) => ({
   disabled,
 }))<ButtonProps>`
   font-family: ${({ theme }) => theme.fonts.normal};
@@ -23,9 +23,24 @@ const Button = styled.a.attrs(({ disabled }) => ({
   text-transform: uppercase;
   cursor: pointer;
   font-size: 1rem;
-  padding: 8px 16px;
+  padding: ${({ buttonSize }) => {
+    if (buttonSize === 'standard') return '8px 16px';
+    else if (buttonSize === 'xl') return '12px 24px';
+  }};
   border-radius: 0.5rem;
-  font-weight: 400;
+  &[disabled]='true' {
+    background-color: ${({ theme, buttonType }) => {
+      if (buttonType === 'primary') return theme.colors.ACCENT_11;
+      else if (buttonType === 'secondary') return theme.colors.ACCENT_12;
+      else if (buttonType === 'alternate') return theme.colors.MAIN_1;
+    }};
+
+    color: ${({ theme, buttonType }) => {
+      if (buttonType === 'primary') return theme.colors.MAIN_1;
+      else if (buttonType === 'secondary') return theme.colors.MAIN_1;
+      else if (buttonType === 'alternate') return theme.colors.ACCENT_10;
+    }};
+  }
   &:hover {
     background-color: ${({ theme, buttonType }) => {
       if (buttonType === 'primary') return theme.colors.ACCENT_3;

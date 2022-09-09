@@ -8,31 +8,82 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary: ComponentStory<typeof Button> = (args) =>
-  // <Button {...args} as="button" disabled>
-  //   Button
-  // </Button>
-  React.createElement(Button, { disabled: true, as: 'button' }, 'Button');
+export const Primary: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button">
+    Button
+  </Button>
+);
+export const PrimaryDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
+);
 export const PrimaryLarge: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args} as="button">
+    Button
+  </Button>
+);
+
+export const PrimaryLargeDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
 );
 
 export const Secondary: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args} as="button">
+    Button
+  </Button>
 );
+
+export const SecondaryDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
+);
+
 export const SecondaryLarge: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args} as="button">
+    Button
+  </Button>
+);
+
+export const SecondaryLargeDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
 );
 
 export const Alternative: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+  <Button {...args} as="button">
+    Button
+  </Button>
 );
+
+export const AlternativeDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
+);
+
 export const AlternativeLarge: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 );
 
+export const AlternativeLargeDisabled: ComponentStory<typeof Button> = (
+  args
+) => (
+  <Button {...args} as="button" disabled>
+    Button
+  </Button>
+);
+
 Primary.args = {
   buttonType: 'primary',
+  buttonSize: 'standard',
+};
+
+PrimaryDisabled.args = {
   buttonSize: 'standard',
 };
 
@@ -41,8 +92,16 @@ PrimaryLarge.args = {
   buttonSize: 'xl',
 };
 
+PrimaryLargeDisabled.args = {
+  buttonSize: 'xl',
+};
+
 Secondary.args = {
   buttonType: 'secondary',
+  buttonSize: 'standard',
+};
+
+SecondaryDisabled.args = {
   buttonSize: 'standard',
 };
 
@@ -51,12 +110,24 @@ SecondaryLarge.args = {
   buttonSize: 'xl',
 };
 
+SecondaryLargeDisabled.args = {
+  buttonSize: 'xl',
+};
+
 Alternative.args = {
   buttonType: 'alternate',
   buttonSize: 'standard',
 };
 
+AlternativeDisabled.args = {
+  buttonSize: 'standard',
+};
+
 AlternativeLarge.args = {
   buttonType: 'alternate',
+  buttonSize: 'xl',
+};
+
+AlternativeLargeDisabled.args = {
   buttonSize: 'xl',
 };
