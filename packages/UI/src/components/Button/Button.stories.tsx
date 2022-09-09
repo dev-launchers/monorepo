@@ -8,9 +8,11 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
-);
+export const Primary: ComponentStory<typeof Button> = (args) =>
+  // <Button {...args} as="button" disabled>
+  //   Button
+  // </Button>
+  React.createElement(Button, { disabled: true, as: 'button' }, 'Button');
 export const PrimaryLarge: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 );

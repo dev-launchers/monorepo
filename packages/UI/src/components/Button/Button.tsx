@@ -1,15 +1,13 @@
 import styled, { css } from 'styled-components';
 
 interface ButtonProps {
-  bgColor?: string;
-  textColor?: string;
-  marginTop?: number;
-  fontSize?: number;
   buttonType?: string;
   buttonSize?: string;
 }
 
-const Button = styled.a<ButtonProps>`
+const Button = styled.a.attrs(({ disabled }) => ({
+  disabled,
+}))<ButtonProps>`
   font-family: ${({ theme }) => theme.fonts.normal};
   background-color: ${({ theme, buttonType }) => {
     if (buttonType === 'primary') return theme.colors.ACCENT_5;
@@ -21,19 +19,10 @@ const Button = styled.a<ButtonProps>`
     else if (buttonType === 'secondary') return theme.colors.MAIN_1;
     else if (buttonType === 'alternate') return theme.colors.MAIN_2;
   }};
-  width: ${({ buttonSize }) => {
-    if (buttonSize === 'standard') return '4.4375rem';
-    else if (buttonSize === 'xl') return '8.125rem';
-  }};
-  height: ${({ buttonSize }) => {
-    if (buttonSize === 'standard') return '1.5rem';
-    else if (buttonSize === 'xl') return '3rem';
-  }};
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: ${({ fontSize }) => `${fontSize}rem` || '1rem'};
-  margin-top: ${({ marginTop }) => `${marginTop}rem` || ''};
+  font-size: 1rem;
   padding: 8px 16px;
   border-radius: 0.5rem;
   font-weight: 400;
