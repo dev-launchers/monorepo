@@ -85,6 +85,7 @@ Primary.args = {
 
 PrimaryDisabled.args = {
   buttonSize: 'standard',
+  buttonType: 'primary',
 };
 
 PrimaryLarge.args = {
@@ -94,6 +95,7 @@ PrimaryLarge.args = {
 
 PrimaryLargeDisabled.args = {
   buttonSize: 'xl',
+  buttonType: 'primary',
 };
 
 Secondary.args = {
@@ -103,6 +105,7 @@ Secondary.args = {
 
 SecondaryDisabled.args = {
   buttonSize: 'standard',
+  buttonType: 'secondary',
 };
 
 SecondaryLarge.args = {
@@ -112,6 +115,7 @@ SecondaryLarge.args = {
 
 SecondaryLargeDisabled.args = {
   buttonSize: 'xl',
+  buttonType: 'secondary',
 };
 
 Alternative.args = {
@@ -121,6 +125,7 @@ Alternative.args = {
 
 AlternativeDisabled.args = {
   buttonSize: 'standard',
+  buttonType: 'alternate',
 };
 
 AlternativeLarge.args = {
@@ -130,4 +135,5 @@ AlternativeLarge.args = {
 
 AlternativeLargeDisabled.args = {
   buttonSize: 'xl',
+  buttonType: 'alternate',
 };
