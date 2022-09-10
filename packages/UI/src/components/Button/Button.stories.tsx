@@ -119,21 +119,21 @@ SecondaryLargeDisabled.args = {
 };
 
 Alternative.args = {
-  buttonType: 'alternate',
+  buttonType: 'alternative',
   buttonSize: 'standard',
 };
 
 AlternativeDisabled.args = {
   buttonSize: 'standard',
-  buttonType: 'alternate',
+  buttonType: 'alternative',
 };
 
 AlternativeLarge.args = {
-  buttonType: 'alternate',
+  buttonType: 'alternative',
   buttonSize: 'xl',
 };
 
 AlternativeLargeDisabled.args = {
   buttonSize: 'xl',
-  buttonType: 'alternate',
+  buttonType: 'alternative',
 };
