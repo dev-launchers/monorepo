@@ -10,14 +10,14 @@ const Button = styled.button.attrs(({ disabled }) => ({
 }))<ButtonProps>`
   font-family: ${({ theme }) => theme.fonts.normal};
   background-color: ${({ theme, buttonType }) => {
-    if (buttonType === 'primary') return theme.colors.ACCENT_5;
-    else if (buttonType === 'secondary') return theme.colors.ACCENT_8;
-    else if (buttonType === 'alternative') return theme.colors.MAIN_1;
+    if (buttonType === 'primary') return theme.colors.BLUE_600;
+    else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_650;
+    else if (buttonType === 'alternative') return theme.colors.GREYSCALE_WHITE;
   }};
   color: ${({ theme, buttonType }) => {
-    if (buttonType === 'primary') return theme.colors.MAIN_1;
-    else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-    else if (buttonType === 'alternative') return theme.colors.MAIN_2;
+    if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+    else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
+    else if (buttonType === 'alternative') return theme.colors.GREYSCALE_BLACK;
   }};
   text-align: center;
   text-transform: uppercase;
@@ -30,66 +30,79 @@ const Button = styled.button.attrs(({ disabled }) => ({
   border-radius: 0.5rem;
   &:disabled {
     background-color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.ACCENT_11;
-      else if (buttonType === 'secondary') return theme.colors.ACCENT_12;
-      else if (buttonType === 'alternative') return theme.colors.MAIN_1;
+      if (buttonType === 'primary') return theme.colors.BLUE_300;
+      else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_300;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_WHITE;
     }};
 
     color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.MAIN_1;
-      else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-      else if (buttonType === 'alternative') return theme.colors.ACCENT_10;
+      if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_OFF_WHITE;
     }};
     &:hover {
       background-color: ${({ theme, buttonType }) => {
-        if (buttonType === 'primary') return theme.colors.ACCENT_11;
-        else if (buttonType === 'secondary') return theme.colors.ACCENT_12;
-        else if (buttonType === 'alternative') return theme.colors.MAIN_1;
+        if (buttonType === 'primary') return theme.colors.BLUE_300;
+        else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_300;
+        else if (buttonType === 'alternative')
+          return theme.colors.GREYSCALE_WHITE;
       }};
 
       color: ${({ theme, buttonType }) => {
-        if (buttonType === 'primary') return theme.colors.MAIN_1;
-        else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-        else if (buttonType === 'alternative') return theme.colors.ACCENT_10;
+        if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+        else if (buttonType === 'secondary')
+          return theme.colors.GREYSCALE_WHITE;
+        else if (buttonType === 'alternative')
+          return theme.colors.GREYSCALE_OFF_WHITE;
       }};
       &:active {
         background-color: ${({ theme, buttonType }) => {
-          if (buttonType === 'primary') return theme.colors.ACCENT_11;
-          else if (buttonType === 'secondary') return theme.colors.ACCENT_12;
-          else if (buttonType === 'alternative') return theme.colors.MAIN_1;
+          if (buttonType === 'primary') return theme.colors.BLUE_300;
+          else if (buttonType === 'secondary')
+            return theme.colors.LIGHT_BLUE_300;
+          else if (buttonType === 'alternative')
+            return theme.colors.GREYSCALE_WHITE;
         }};
 
         color: ${({ theme, buttonType }) => {
-          if (buttonType === 'primary') return theme.colors.MAIN_1;
-          else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-          else if (buttonType === 'alternative') return theme.colors.ACCENT_10;
+          if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+          else if (buttonType === 'secondary')
+            return theme.colors.GREYSCALE_WHITE;
+          else if (buttonType === 'alternative')
+            return theme.colors.GREYSCALE_OFF_WHITE;
         }};
       }
     }
   }
   &:hover {
     background-color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.ACCENT_3;
-      else if (buttonType === 'secondary') return theme.colors.ACCENT_9;
-      else if (buttonType === 'alternative') return theme.colors.ACCENT_10;
+      if (buttonType === 'primary') return theme.colors.BLUE_700;
+      else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_700;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_OFF_WHITE;
     }};
     color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.MAIN_1;
-      else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-      else if (buttonType === 'alternative') return theme.colors.MAIN_2;
+      if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_BLACK;
     }};
     transition: background-color 0.5s, color 0.5s;
   }
   &:active {
     background-color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.ACCENT_11;
-      else if (buttonType === 'secondary') return theme.colors.ACCENT_12;
-      else if (buttonType === 'alternative') return theme.colors.MAIN_1;
+      if (buttonType === 'primary') return theme.colors.BLUE_300;
+      else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_300;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_WHITE;
     }};
     color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.MAIN_1;
-      else if (buttonType === 'secondary') return theme.colors.MAIN_1;
-      else if (buttonType === 'alternative') return theme.colors.ACCENT_10;
+      if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
+      else if (buttonType === 'alternative')
+        return theme.colors.GREYSCALE_OFF_WHITE;
     }};
   }
 `;
