@@ -52,6 +52,8 @@ const h5 = `
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.375rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     @media only screen and (max-width: 62.5rem) {
         font-size: 1.25rem;
         line-height: 1.75rem;
@@ -99,6 +101,10 @@ const button = `
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
+    text-transform: uppercase;
+    @media only screen and (max-width: 62.5rem) {
+        letter-spacing: 0.0125em;
+    }
 `;
 
 const label = `
@@ -106,6 +112,7 @@ const label = `
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.25rem;
+    text-transform: uppercase;
     @media only screen and (max-width: 62.5rem) {
         font-size: 1rem;
         line-height: 1.5rem;
