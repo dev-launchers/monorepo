@@ -99,6 +99,7 @@ const button = `
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
+    letter-spacing: .4em;
 `;
 
 const label = `
