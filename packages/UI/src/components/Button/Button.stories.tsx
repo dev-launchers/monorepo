@@ -8,75 +8,51 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-export const Primary: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button">
-    Button
-  </Button>
-);
-export const PrimaryDisabled: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button" disabled>
-    Button
-  </Button>
-);
-export const PrimaryLarge: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button">
-    Button
-  </Button>
-);
-
-export const PrimaryLargeDisabled: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button" disabled>
-    Button
-  </Button>
-);
-
-export const Secondary: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button">
-    Button
-  </Button>
-);
-
-export const SecondaryDisabled: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button" disabled>
-    Button
-  </Button>
-);
-
-export const SecondaryLarge: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button">
-    Button
-  </Button>
-);
-
-export const SecondaryLargeDisabled: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button" disabled>
-    Button
-  </Button>
-);
-
-export const Alternative: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button">
-    Button
-  </Button>
-);
-
-export const AlternativeDisabled: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} as="button" disabled>
-    Button
-  </Button>
-);
-
-export const AlternativeLarge: ComponentStory<typeof Button> = (args) => (
+const TemplateButton: ComponentStory<typeof Button> = (args) => (
   <Button {...args}>Button</Button>
 );
 
-export const AlternativeLargeDisabled: ComponentStory<typeof Button> = (
-  args
-) => (
-  <Button {...args} as="button" disabled>
+const TemplateButtonDisabled: ComponentStory<typeof Button> = (args) => (
+  <Button {...args} disabled>
     Button
   </Button>
 );
+
+export const Primary = TemplateButton.bind({});
+Primary.args = { ...Primary.args };
+
+export const PrimaryDisabled = TemplateButtonDisabled.bind({});
+PrimaryDisabled.args = { ...PrimaryDisabled.args };
+
+export const PrimaryLarge = TemplateButton.bind({});
+PrimaryLarge.args = { ...PrimaryLarge.args };
+
+export const PrimaryLargeDisabled = TemplateButtonDisabled.bind({});
+PrimaryLargeDisabled.args = { ...PrimaryLargeDisabled.args };
+
+export const Secondary = TemplateButton.bind({});
+Secondary.args = { ...Secondary.args };
+
+export const SecondaryDisabled = TemplateButtonDisabled.bind({});
+SecondaryDisabled.args = { ...SecondaryDisabled.args };
+
+export const SecondaryLarge = TemplateButton.bind({});
+SecondaryLarge.args = { ...SecondaryLarge.args };
+
+export const SecondaryLargeDisabled = TemplateButtonDisabled.bind({});
+SecondaryLargeDisabled.args = { ...SecondaryLargeDisabled.args };
+
+export const Alternative = TemplateButton.bind({});
+Alternative.args = { ...Alternative.args };
+
+export const AlternativeDisabled = TemplateButtonDisabled.bind({});
+AlternativeDisabled.args = { ...AlternativeDisabled.args };
+
+export const AlternativeLarge = TemplateButton.bind({});
+AlternativeLarge.args = { ...AlternativeLarge.args };
+
+export const AlternativeLargeDisabled = TemplateButtonDisabled.bind({});
+AlternativeLargeDisabled.args = { ...AlternativeLargeDisabled.args };
 
 Primary.args = {
   buttonType: 'primary',
