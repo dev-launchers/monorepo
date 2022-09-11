@@ -16,6 +16,7 @@ const Button = styled.button.attrs(({ disabled }) => ({
     else if (buttonType === 'alternative') return theme.colors.GREYSCALE_WHITE;
   }};
   border: none;
+  box-shadow: 0px 2px 6px 2px ${({ theme }) => theme.colors.GREYSCALE_GREY};
   color: ${({ theme, buttonType }) => {
     if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
     else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
