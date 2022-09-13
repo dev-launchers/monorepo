@@ -39,8 +39,7 @@ const Button = styled.button.attrs(({ disabled }) => ({
     color: ${({ theme, buttonType }) => {
       if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
       else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
-      else if (buttonType === 'alternative')
-        return theme.colors.GREYSCALE_OFF_WHITE;
+      else if (buttonType === 'alternative') return theme.colors.GREYSCALE_GREY;
     }};
     &:hover {
       background-color: ${({ theme, buttonType }) => {
@@ -55,7 +54,7 @@ const Button = styled.button.attrs(({ disabled }) => ({
         else if (buttonType === 'secondary')
           return theme.colors.GREYSCALE_WHITE;
         else if (buttonType === 'alternative')
-          return theme.colors.GREYSCALE_OFF_WHITE;
+          return theme.colors.GREYSCALE_GREY;
       }};
       &:active {
         background-color: ${({ theme, buttonType }) => {
@@ -71,7 +70,7 @@ const Button = styled.button.attrs(({ disabled }) => ({
           else if (buttonType === 'secondary')
             return theme.colors.GREYSCALE_WHITE;
           else if (buttonType === 'alternative')
-            return theme.colors.GREYSCALE_OFF_WHITE;
+            return theme.colors.GREYSCALE_GREY;
         }};
       }
     }
