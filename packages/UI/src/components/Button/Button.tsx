@@ -22,7 +22,6 @@ const Button = styled.button.attrs(({ disabled }) => ({
     else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
     else if (buttonType === 'alternative') return theme.colors.GREYSCALE_BLACK;
   }};
-  text-transform: uppercase;
   cursor: pointer;
   padding: ${({ buttonSize }) => {
     if (buttonSize === 'standard') return '8px 16px';
