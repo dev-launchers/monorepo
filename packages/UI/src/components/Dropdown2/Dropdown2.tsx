@@ -10,13 +10,14 @@ import {
   Label,
   Input,
 } from './StyledDropdown2';
+import type { DropdownProps } from '.';
 
-const Dropdown2 = ({ size, title, open, type }) => {
+const Dropdown2 = ({ width, title, open, type }: DropdownProps) => {
   const sizes = { small: 261, medium: 301, large: 333 };
   const arr = [1, 2, 3, 4];
 
   return (
-    <Dropdown size={sizes[size]}>
+    <Dropdown width={sizes[width]}>
       <Toggle>
         <Typography type="label">{title}</Typography>
         <Chevron open={open} />
