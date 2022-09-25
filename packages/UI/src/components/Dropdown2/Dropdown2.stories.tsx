@@ -1,32 +1,31 @@
+import type { ComponentStory } from '@storybook/react';
 import React from 'react';
 import Dropdown2 from './Dropdown2';
 
 export default {
   title: 'Common Components/Dropdown',
   component: Dropdown2,
-  argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: 'inline-radio',
-    },
-    title: {
-      options: ['skills', 'position', 'difficulty'],
-      control: 'inline-radio',
-    },
-    type: {
-      options: ['checkbox', 'radio'],
-      control: 'inline-radio',
-    },
-    open: {
-      control: 'boolean',
-    },
-  },
 };
 
-export const Customizable = (args) => <Dropdown2 {...args} />;
-Customizable.args = {
-  open: false,
+const TemplateButton: ComponentStory<typeof Dropdown2> = (args) => (
+  <Dropdown2 {...args}></Dropdown2>
+);
+
+export const WithRadio = TemplateButton.bind({});
+WithRadio.args = {
+  type: 'radio',
   title: 'skills',
-  size: 'small',
+};
+
+export const WithRadioOpen = TemplateButton.bind({});
+WithRadioOpen.args = {
+  type: 'radio',
+  title: 'skills',
+  open: true,
+};
+
+export const WithCheckBox = TemplateButton.bind({});
+WithCheckBox.args = {
   type: 'checkbox',
+  title: 'skills',
 };
