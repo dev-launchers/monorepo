@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { shadowStyles } from '../Shadow/Styled.Shadow';
 import { typographyStyles } from '../Typography/Styled.Typography';
 
 interface ButtonProps {
@@ -9,14 +10,15 @@ interface ButtonProps {
 const Button = styled.button.attrs(({ disabled }) => ({
   disabled,
 }))<ButtonProps>`
+  ${shadowStyles['shadow500']}
   ${typographyStyles['button']}
+  
   background-color: ${({ theme, buttonType }) => {
     if (buttonType === 'primary') return theme.colors.BLUE_600;
     else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_650;
     else if (buttonType === 'alternative') return theme.colors.GREYSCALE_WHITE;
   }};
   border: none;
-  box-shadow: 0px 2px 6px 2px ${({ theme }) => theme.colors.GREYSCALE_GREY};
   color: ${({ theme, buttonType }) => {
     if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
     else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
