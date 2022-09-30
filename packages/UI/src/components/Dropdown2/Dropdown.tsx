@@ -19,32 +19,24 @@ const Dropdown = ({
   type,
   isOpen = false,
   options = [],
+  recieveValue,
 }: DropdownProps) => {
   const [menuOpen, setMenuOpen] = useState(isOpen);
 
-  const node = useRef(null);
+  const node = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
-    if (node.current.contains(e.target)) return;
+    if (node.current?.contains(e.target)) return;
     // outside click
     setMenuOpen(false);
   };
 
-  const initialState = {
-    1: false,
-    2: false,
-    3: false,
-    4: false,
-  };
-
   const onchange = (e: ChangeEvent, option: string) => {
     const { checked } = e.target as HTMLInputElement;
-    if (type === 'radio')
-      setCheckedOptions({ ...initialState, [option]: checked });
-    else setCheckedOptions({ ...checkedOptions, [option]: checked });
+    if (type === 'radio') setCheckedOptions({ [option]: checked });
   };
-
-  const [checkedOptions, setCheckedOptions] = useState(initialState);
+  // add typings here
+  const [checkedOptions, setCheckedOptions] = useState([]);
 
   useEffect(() => {
     if (menuOpen) {
@@ -72,7 +64,14 @@ const Dropdown = ({
                 type={type}
                 id={String(option)}
                 name="name"
-                onChange={(e) => onchange(e, String(option))}
+                onChange={(e) => {
+                  onchange(e, String(option));
+                  setCheckedOptions((prev) => {
+                    prev[option] = e.target.checked;
+                    recieveValue(prev);
+                    return prev;
+                  });
+                }}
               />
               <p>{option}</p>
             </Option>
