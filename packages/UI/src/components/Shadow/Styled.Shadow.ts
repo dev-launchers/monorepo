@@ -1,23 +1,22 @@
 import { css } from 'styled-components';
 
 const innerShadow100 = css`
-  box-shadow: 2px 2px 6px 0px ${({ theme }) => theme.colors.INNERSHADOW_100}
-    inset;
+  box-shadow: 2px 2px 6px 0px rgba(127, 126, 127, 0.5) inset;
 `;
-const shadow100 = `
-    box-shadow: 0px 2px 2px 2px ${({ theme }) => theme.colors.SHADOW_100};
+const shadow100 = css`
+  box-shadow: 0px 2px 2px 2px rgba(51, 51, 51, 0.08);
 `;
-const shadow200 = `
-    box-shadow: 0px 4px 6px 3px ${({ theme }) => theme.colors.SHADOW_200};
+const shadow200 = css`
+  box-shadow: 0px 4px 6px 3px rgba(51, 51, 51, 0.08);
 `;
-const shadow300 = `
-    box-shadow: 0px 6px 10px 5px ${({ theme }) => theme.colors.SHADOW_300};
+const shadow300 = css`
+  box-shadow: 0px 6px 10px 5px rgba(51, 51, 51, 0.1);
 `;
-const shadow400 = `
-    box-shadow: 0px 10px 14px 8px ${({ theme }) => theme.colors.SHADOW_400};
+const shadow400 = css`
+  box-shadow: 0px 10px 14px 8px rgba(51, 51, 51, 0.08);
 `;
-const shadow500 = `
-    box-shadow: 0px 10px 18px 10px ${({ theme }) => theme.colors.SHADOW_500};
+const shadow500 = css`
+  box-shadow: 0px 10px 18px 10px rgba(127, 126, 127, 0.25);
 `;
 
 export const shadowStyles = {

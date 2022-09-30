@@ -71,12 +71,6 @@ const theme = {
     GREYSCALE_CHARCOAL: '#474747',
     GREYSCALE_OFF_BLACK: '#1C1C1C',
     GREYSCALE_BLACK: '#000000',
-    INNERSHADOW_100: 'rgba(127, 126, 127, 0.5)',
-    SHADOW_100: 'rgba(51, 51, 51, 0.08)',
-    SHADOW_200: 'rgba(51, 51, 51, 0.08)',
-    SHADOW_300: 'rgba(51, 51, 51, 0.1)',
-    SHADOW_400: 'rgba(51, 51, 51, 0.08',
-    SHADOW_500: 'rgba(127, 126, 127, 0.25)',
   },
   fonts: {
     headline: 'Abel',
