@@ -1,9 +1,9 @@
-export { default } from './Dropdown2';
+export { default } from './Dropdown';
 
 export interface DropdownProps {
-  width: 'small' | 'medium' | 'large';
-  options: number[] | string[];
-  title: string;
-  open: boolean;
-  type: 'radio' | 'checkbox';
+  width?: 'sm' | 'md' | 'lg';
+  options?: number[] | string[];
+  title?: string;
+  isOpen?: boolean;
+  type?: 'radio' | 'checkbox';
 }
