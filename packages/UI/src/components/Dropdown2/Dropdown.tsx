@@ -26,17 +26,29 @@ const Dropdown = ({
   const node = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: MouseEvent) => {
-    if (node.current?.contains(e.target)) return;
-    // outside click
+    if (node.current?.contains(e.target as Node)) return;
     setMenuOpen(false);
   };
 
-  const onchange = (e: ChangeEvent, option: string) => {
+  const onChange = (e: ChangeEvent, text: string) => {
     const { checked } = e.target as HTMLInputElement;
-    if (type === 'radio') setCheckedOptions({ [option]: checked });
+    if (type === 'radio')
+      setCheckedOptions((prev) => {
+        Object.keys(prev).forEach((key) => (prev[key] = false));
+        prev[text] = checked;
+        return prev;
+      });
+    if (type === 'checkbox')
+      setCheckedOptions((prev) => {
+        prev[text] = checked;
+        return prev;
+      });
+    recieveValue?.(checkedOptions);
   };
   // add typings here
-  const [checkedOptions, setCheckedOptions] = useState([]);
+  const [checkedOptions, setCheckedOptions] = useState<{
+    [key: string]: boolean;
+  }>({});
 
   useEffect(() => {
     if (menuOpen) {
@@ -57,23 +69,16 @@ const Dropdown = ({
       </Toggle>
       <OptionsContainer isOpen={menuOpen}>
         <Options>
-          {options.map((option) => (
-            <Option key={option} htmlFor={String(option)}>
+          {options.map(({ text, disabled }, i) => (
+            <Option key={i} htmlFor={String(text)}>
               <Input
-                disabled={option === 'option1' ? true : false}
+                disabled={disabled}
                 type={type}
-                id={String(option)}
+                id={String(text)}
                 name="name"
-                onChange={(e) => {
-                  onchange(e, String(option));
-                  setCheckedOptions((prev) => {
-                    prev[option] = e.target.checked;
-                    recieveValue(prev);
-                    return prev;
-                  });
-                }}
+                onChange={(e) => onChange(e, String(text))}
               />
-              <p>{option}</p>
+              <p>{text}</p>
             </Option>
           ))}
         </Options>
