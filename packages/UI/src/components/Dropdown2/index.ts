@@ -2,8 +2,12 @@ export { default } from './Dropdown';
 
 export interface DropdownProps {
   width?: 'sm' | 'md' | 'lg';
-  options?: number[] | string[];
+  options?: {
+    text: string;
+    disabled: boolean;
+  }[];
   title?: string;
   isOpen?: boolean;
   type?: 'radio' | 'checkbox';
+  recieveValue?: (value: object) => void;
 }
