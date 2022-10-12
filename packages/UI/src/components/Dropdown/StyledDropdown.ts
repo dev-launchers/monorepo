@@ -19,7 +19,6 @@ export const DropdownContainer = styled.div<DropdownProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 `;
 
 export const Toggle = styled.div`

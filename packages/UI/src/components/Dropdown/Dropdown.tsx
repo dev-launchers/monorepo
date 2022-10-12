@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { ChangeEvent } from 'react';
+import Checkbox from '../Checkbox/Checkbox';
+import Radio from '../Radio/Radio';
 import Typography from '../Typography/Typography';
 
 import {
@@ -70,16 +72,12 @@ const Dropdown = ({
       <OptionsContainer isOpen={menuOpen}>
         <Options>
           {options.map(({ text, disabled }, i) => (
-            <Option key={i} htmlFor={String(text)}>
-              <Input
-                disabled={disabled}
-                type={type}
-                id={String(text)}
-                name="name"
-                onChange={(e) => onChange(e, String(text))}
-              />
-              <p>{text}</p>
-            </Option>
+            <Checkbox
+              key={i}
+              label={text}
+              onChange={onChange}
+              disabled={disabled}
+            />
           ))}
         </Options>
       </OptionsContainer>
