@@ -9,13 +9,13 @@ export const CheckBoxWrapper = styled.div`
   padding: 0.5rem 1rem;
   background: #fff;
   z-index: 1;
-  overflow: hidden;
   font-family: ${({ theme }) => theme.fonts.normal};
   border-radius: 8px;
-  &:hover {
-    box-shadow: 1px 1px 4px #7f7e7f;
+  label#label {
+    pointer-events: none;
   }
 `;
+
 export const Switch = styled.label`
   border: 1px solid black;
   width: 48px;
@@ -23,7 +23,22 @@ export const Switch = styled.label`
   border-radius: 15px;
   background: #fff;
   cursor: pointer;
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+  }
 
+  &:hover {
+    &:before {
+      box-shadow: 1px 1px 4px #7f7e7f;
+    }
+  }
   &::after {
     content: '';
     display: block;
@@ -54,6 +69,19 @@ export const CheckBox = styled.input`
   &:disabled + ${Switch} {
     background: #f0edee;
     border: 1px solid #474747;
+    cursor: not-allowed;
+    &::before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      cursor: not-allowed;
+      border-radius: 8px;
+      box-shadow: none;
+    }
 
     &::after {
       background: #474747;
