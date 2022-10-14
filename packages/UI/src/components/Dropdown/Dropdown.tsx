@@ -10,8 +10,6 @@ import {
   Chevron,
   OptionsContainer,
   Options,
-  Option,
-  Input,
 } from './StyledDropdown';
 import type { DropdownProps } from '.';
 
@@ -71,14 +69,23 @@ const Dropdown = ({
       </Toggle>
       <OptionsContainer isOpen={menuOpen}>
         <Options>
-          {options.map(({ text, disabled }, i) => (
-            <Checkbox
-              key={i}
-              label={text}
-              onChange={onChange}
-              disabled={disabled}
-            />
-          ))}
+          {options.map(({ text, disabled }, i) => {
+            return type === 'checkbox' ? (
+              <Checkbox
+                key={i}
+                label={text}
+                onChange={onChange}
+                disabled={disabled}
+              />
+            ) : (
+              <Radio
+                key={i}
+                label={text}
+                onChange={onChange}
+                disabled={disabled}
+              />
+            );
+          })}
         </Options>
       </OptionsContainer>
     </DropdownContainer>
