@@ -9,13 +9,12 @@ export const Option = styled.label`
   padding: 0.5rem 1rem;
   border-radius: 8px;
   position: relative;
-  overflow: hidden;
   width: fit-content;
   background: #fff;
   z-index: 1;
 
-  &:hover {
-    box-shadow: 1px 1px 4px #7f7e7f;
+  p {
+    pointer-events: none;
   }
 `;
 
@@ -31,21 +30,41 @@ export const Input = styled.input`
   outline: none;
   cursor: pointer;
 
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    &::after {
+      box-shadow: 1px 1px 4px #7f7e7f;
+    }
+  }
+
   &:checked {
     background-color: black;
-    position: relative;
 
     &::before {
       content: '✔';
       font-size: 1.2em;
       color: #fff;
       position: absolute;
-      left: 2px;
-      top: 0px;
+      left: 20px;
+      top: 10px;
+      border-radius: 8px;
     }
   }
 
   &:disabled {
+    cursor: not-allowed;
+
     &:before {
       content: '';
       width: 100%;
@@ -55,6 +74,12 @@ export const Input = styled.input`
       position: absolute;
       top: 0;
       left: 0;
+      border-radius: 8px;
+    }
+
+    &::after {
+      cursor: not-allowed;
+      box-shadow: none;
     }
   }
 `;

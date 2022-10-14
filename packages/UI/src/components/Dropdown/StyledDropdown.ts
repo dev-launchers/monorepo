@@ -47,6 +47,10 @@ export const Options = styled.form<DropdownProps>`
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 2rem;
+
+  label {
+    width: 100%;
+  }
 `;
 
 export const Chevron = styled.img.attrs(() => ({
