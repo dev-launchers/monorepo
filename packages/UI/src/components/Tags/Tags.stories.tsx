@@ -20,10 +20,10 @@ const RegularTag: ComponentStory<typeof Tags> = (args) => (
 export const Black = RegularTag.bind({});
 Black.args = { ...Black.args };
 
-export const Grey = FilterTag.bind({});
+export const Grey = RegularTag.bind({});
 Grey.args = { ...Grey.args };
 
-export const GreyFilter = RegularTag.bind({});
+export const GreyFilter = FilterTag.bind({});
 GreyFilter.args = { ...GreyFilter.args };
 
 export const White = RegularTag.bind({});

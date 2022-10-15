@@ -20,8 +20,8 @@ export const Tag = styled.div<StyledProps>`
     else if (txtColor === 'GREYSCALE_WHITE')
       return theme.colors.GREYSCALE_WHITE;
   }};
-  border-radius: 2rem;
-  max-width: 7.9375rem;
+  border-radius: 1.5rem;
+  width: fit-content;
   text-align: center;
   padding: 0.5rem 1rem;
 `;
@@ -42,10 +42,8 @@ export const CloseButton = styled.button`
     else if (txtColor === 'GREYSCALE_WHITE')
       return theme.colors.GREYSCALE_WHITE;
   }};
-  width: 18%;
-  height: 18%;
   border: none;
-  margin-left: 0.9375rem;
+  margin-left: 0.5;
   cursor: pointer;
 `;
 export const CloseIcon = styled.svg`
@@ -64,6 +62,5 @@ export const CloseIcon = styled.svg`
     else if (txtColor === 'GREYSCALE_WHITE')
       return theme.colors.GREYSCALE_WHITE;
   }};
-  height: 100%;
-  width: 100%;
+  width: 1rem;
 `;
