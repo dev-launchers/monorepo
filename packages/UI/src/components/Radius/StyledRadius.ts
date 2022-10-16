@@ -1,28 +1,28 @@
 import { css } from 'styled-components';
 
 const radius100 = css`
-  border-radius: 4px;
+  border-radius: 0.25rem;
 `;
 const radius200 = css`
-  border-radius: 8px;
+  border-radius: 0.5rem;
 `;
 const radius300 = css`
-  border-radius: 16px;
+  border-radius: 1rem;
 `;
 const radius400 = css`
-  border-radius: 24px;
+  border-radius: 1.5rem;
 `;
 const radius500 = css`
-  border-radius: 32px;
+  border-radius: 2rem;
 `;
 const radius600 = css`
-  border-radius: 48px;
+  border-radius: 3rem;
 `;
 const radius700 = css`
-  border-radius: 64px;
+  border-radius: 4rem;
 `;
 const radius800 = css`
-  border-radius: 96px;
+  border-radius: 6rem;
 `;
 
 export const radiusStyles = {

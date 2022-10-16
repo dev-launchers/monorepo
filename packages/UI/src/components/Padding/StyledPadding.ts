@@ -1,49 +1,49 @@
 import { css } from 'styled-components';
 
 const uniPad100 = css`
-  padding: 4px;
+  padding: 0.25rem;
 `;
 const uniPad200 = css`
-  padding: 8px;
+  padding: 0.5rem;
 `;
 const uniPad300 = css`
-  padding: 16px;
+  padding: 1rem;
 `;
 const uniPad400 = css`
-  padding: 24px;
+  padding: 1.5rem;
 `;
 const uniPad500 = css`
-  padding: 32px;
+  padding: 2rem;
 `;
 const uniPad600 = css`
-  padding: 48px;
+  padding: 3rem;
 `;
 const uniPad700 = css`
-  padding: 64px;
+  padding: 4rem;
 `;
 const uniPad800 = css`
-  padding: 96px;
+  padding: 6rem;
 `;
 const uniPad900 = css`
-  padding: 128px;
+  padding: 8rem;
 `;
 const comPad100 = css`
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
 `;
 const comPad200 = css`
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
 `;
 const comPad300 = css`
-  padding: 16px 32px;
+  padding: 1rem 2rem;
 `;
 const comPad400 = css`
-  padding: 24px 48px;
+  padding: 1.5rem 3rem;
 `;
 const comPad500 = css`
-  padding: 48px 64px;
+  padding: 3rem 6rem;
 `;
 const comPad600 = css`
-  padding: 64px 128px;
+  padding: 4rem 8rem;
 `;
 
 export const paddingStyles = {
