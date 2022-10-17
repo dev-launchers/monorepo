@@ -60,17 +60,17 @@ White.args = {
 };
 Yellow.args = {
   bgColor: 'YELLOW_200',
-  txtColor: 'GREYSCALE_WHITE',
+  txtColor: 'GREYSCALE_BLACK',
 };
 LightBlue.args = {
   bgColor: 'LIGHT_BLUE_200',
-  txtColor: 'GREYSCALE_WHITE',
+  txtColor: 'GREYSCALE_BLACK',
 };
 Blue.args = {
   bgColor: 'BLUE_200',
-  txtColor: 'GREYSCALE_WHITE',
+  txtColor: 'GREYSCALE_BLACK',
 };
 Orange.args = {
   bgColor: 'ORANGE_200',
-  txtColor: 'GREYSCALE_WHITE',
+  txtColor: 'GREYSCALE_BLACK',
 };

@@ -45,6 +45,7 @@ export const CloseButton = styled.button`
   border: none;
   margin-left: 0.5;
   cursor: pointer;
+  padding-left: 0.5rem;
 `;
 export const CloseIcon = styled.svg`
   background-color: ${({ theme, bgColor }) => {
