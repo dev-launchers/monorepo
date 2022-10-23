@@ -9,7 +9,7 @@ const Radio = ({ disabled = false, label, onChange }: RadioProps) => {
         type="radio"
         id={label}
         name="radio"
-        onChange={(e) => onChange(e, label)}
+        onChange={(e) => onChange(e, label as string)}
       />
       {label && <p>{label}</p>}
     </Option>
