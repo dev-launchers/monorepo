@@ -12,7 +12,11 @@ const Toggle = ({ disabled, label }: ToggleProps) => {
           id="checkbox"
         />
         <Switch htmlFor="checkbox" />
-        {label && <label htmlFor="checkbox">{label}</label>}
+        {label && (
+          <label id="label" htmlFor="checkbox">
+            {label}
+          </label>
+        )}
       </CheckBoxWrapper>
     </div>
   );

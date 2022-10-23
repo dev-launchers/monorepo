@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { ChangeEvent } from 'react';
+import Checkbox from '../Checkbox/Checkbox';
+import Radio from '../Radio/Radio';
 import Typography from '../Typography/Typography';
 
 import {
@@ -8,8 +10,6 @@ import {
   Chevron,
   OptionsContainer,
   Options,
-  Option,
-  Input,
 } from './StyledDropdown';
 import type { DropdownProps } from '.';
 
@@ -69,18 +69,23 @@ const Dropdown = ({
       </Toggle>
       <OptionsContainer isOpen={menuOpen}>
         <Options>
-          {options.map(({ text, disabled }, i) => (
-            <Option key={i} htmlFor={String(text)}>
-              <Input
+          {options.map(({ text, disabled }, i) => {
+            return type === 'checkbox' ? (
+              <Checkbox
+                key={i}
+                label={text}
+                onChange={onChange}
                 disabled={disabled}
-                type={type}
-                id={String(text)}
-                name="name"
-                onChange={(e) => onChange(e, String(text))}
               />
-              <p>{text}</p>
-            </Option>
-          ))}
+            ) : (
+              <Radio
+                key={i}
+                label={text}
+                onChange={onChange}
+                disabled={disabled}
+              />
+            );
+          })}
         </Options>
       </OptionsContainer>
     </DropdownContainer>

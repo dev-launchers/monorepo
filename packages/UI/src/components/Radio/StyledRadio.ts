@@ -11,11 +11,10 @@ export const Option = styled.label`
   border-radius: 8px;
   width: fit-content;
   position: relative;
-  overflow: hidden;
   z-index: 1;
 
-  &:hover {
-    box-shadow: 1px 1px 4px #7f7e7f;
+  p {
+    pointer-events: none;
   }
 `;
 
@@ -24,15 +23,27 @@ export const Input = styled.input`
   width: 24px;
   -webkit-appearance: none;
   appearance: none;
-
   border-radius: 24px;
   border: 1px solid black;
   outline: none;
   cursor: pointer;
 
+  &:hover {
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      border-radius: 8px;
+      box-shadow: 1px 1px 4px #7f7e7f;
+    }
+  }
+
   &:checked {
     border: 2px solid black;
-    position: relative;
 
     &::before {
       content: '';
@@ -41,12 +52,13 @@ export const Input = styled.input`
       border-radius: 16px;
       background: black;
       position: absolute;
-      left: 2px;
-      top: 2px;
+      left: 20px;
+      top: 12px;
     }
   }
 
   &:disabled {
+    cursor: not-allowed;
     &:before {
       content: '';
       width: 100%;
@@ -56,6 +68,11 @@ export const Input = styled.input`
       position: absolute;
       top: 0;
       left: 0;
+      border-radius: 8px;
+    }
+    &::after {
+      cursor: not-allowed;
+      box-shadow: none;
     }
   }
 `;

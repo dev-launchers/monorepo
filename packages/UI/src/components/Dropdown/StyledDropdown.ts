@@ -19,7 +19,6 @@ export const DropdownContainer = styled.div<DropdownProps>`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
 `;
 
 export const Toggle = styled.div`
@@ -48,6 +47,10 @@ export const Options = styled.form<DropdownProps>`
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem 2rem;
+
+  label {
+    width: 100%;
+  }
 `;
 
 export const Chevron = styled.img.attrs(() => ({

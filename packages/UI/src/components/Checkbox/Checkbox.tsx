@@ -9,7 +9,7 @@ const Checkbox = ({ disabled = false, label, onChange }: CheckboxProps) => {
         type="checkbox"
         id={label}
         name={label}
-        onChange={(e) => onChange(e, label)}
+        onChange={(e) => onChange(e, label as string)}
       />
       {label && <p>{label}</p>}
     </Option>
