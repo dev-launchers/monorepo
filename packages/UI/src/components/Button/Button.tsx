@@ -30,6 +30,12 @@ const Button = styled.button.attrs(({ disabled }) => ({
     else if (buttonSize === 'xl') return '12px 24px';
   }};
   border-radius: 0.5rem;
+
+  color: ${({ theme, buttonType }) => {
+    if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
+    else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
+    else if (buttonType === 'alternative') return theme.colors.GREYSCALE_GREY;
+  }};
   &:disabled {
     background-color: ${({ theme, buttonType }) => {
       if (buttonType === 'primary') return theme.colors.BLUE_300;
@@ -58,23 +64,6 @@ const Button = styled.button.attrs(({ disabled }) => ({
         else if (buttonType === 'alternative')
           return theme.colors.GREYSCALE_GREY;
       }};
-      &:active {
-        background-color: ${({ theme, buttonType }) => {
-          if (buttonType === 'primary') return theme.colors.BLUE_300;
-          else if (buttonType === 'secondary')
-            return theme.colors.LIGHT_BLUE_300;
-          else if (buttonType === 'alternative')
-            return theme.colors.GREYSCALE_WHITE;
-        }};
-
-        color: ${({ theme, buttonType }) => {
-          if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
-          else if (buttonType === 'secondary')
-            return theme.colors.GREYSCALE_WHITE;
-          else if (buttonType === 'alternative')
-            return theme.colors.GREYSCALE_GREY;
-        }};
-      }
     }
   }
   &:hover {
@@ -91,20 +80,6 @@ const Button = styled.button.attrs(({ disabled }) => ({
         return theme.colors.GREYSCALE_BLACK;
     }};
     transition: background-color 0.5s, color 0.5s;
-  }
-  &:active {
-    background-color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.BLUE_300;
-      else if (buttonType === 'secondary') return theme.colors.LIGHT_BLUE_300;
-      else if (buttonType === 'alternative')
-        return theme.colors.GREYSCALE_WHITE;
-    }};
-    color: ${({ theme, buttonType }) => {
-      if (buttonType === 'primary') return theme.colors.GREYSCALE_WHITE;
-      else if (buttonType === 'secondary') return theme.colors.GREYSCALE_WHITE;
-      else if (buttonType === 'alternative')
-        return theme.colors.GREYSCALE_OFF_WHITE;
-    }};
   }
 `;
 export default Button;
